@@ -35,8 +35,8 @@ export default function Home() {
             alt={t("modernBuilding")} 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-[#020654]/80 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#020654] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[#020654]/50 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#020654]/70 via-transparent to-transparent" />
         </div>
 
         <div className="container relative z-10 text-center text-white max-w-4xl px-4">
