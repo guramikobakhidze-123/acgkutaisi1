@@ -1,11 +1,12 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
-export type Language = "ka" | "en" | "ru";
+export type Language = "ka" | "en" | "ru" | "tr";
 
 export interface I18nString {
   ka: string;
   en: string;
   ru: string;
+  tr: string;
 }
 
 interface LanguageContextType {
@@ -274,6 +275,92 @@ const translations = {
     faxPhone: "Факс",
     clientSuccess: "Успех клиента",
   },
+  tr: {
+    home: "Ana Sayfa",
+    services: "Hizmetler",
+    team: "Ekip",
+    insights: "Haberler",
+    contact: "İletişim",
+    getConsultation: "Danışmanlık Alın",
+    heroTitle: "Uzman Denetim ve",
+    heroTitleHighlight: "Stratejik Danışmanlık",
+    heroDescription: "İşletmenizin karmaşık finansal ortamlarda yol almasına ve sürdürülebilir büyüme elde etmesine yardımcı olmak için hassasiyet, netlik ve öngörü sağlıyoruz.",
+    exploreServices: "Hizmetleri Keşfet",
+    yearsExperience: "Yıllık Deneyim",
+    corporateClients: "Kurumsal Müşteri",
+    successfulAudits: "Başarılı Denetim",
+    consultants: "Danışman",
+    ourExpertise: "Uzmanlığımız",
+    comprehensiveSolutions: "Kapsamlı Finansal Çözümler",
+    viewAllServices: "Tüm Hizmetleri Gör",
+    learnMore: "Daha fazla bilgi",
+    whyChooseUs: "Neden Biz",
+    partnerYouCanTrust: "Güvenebileceğiniz Bir Ortak",
+    trustDescription: "Şeffaflık, uzmanlık ve ölçülebilir sonuçlara dayalı uzun vadeli ortaklıklar kurmaya inanıyoruz.",
+    strategicInsight: "Stratejik İçgörü",
+    strategicInsightDesc: "Sürdürülebilir büyüme için veriye dayalı kararlar.",
+    globalCompliance: "Küresel Uyum",
+    globalComplianceDesc: "Uluslararası düzenlemelerde uzman navigasyon.",
+    riskMitigation: "Risk Azaltma",
+    riskMitigationDesc: "Finansal tehditlerin proaktif tespiti.",
+    readyToElevate: "Finansal stratejinizi yükseltmeye hazır mısınız?",
+    scheduleConsultation: "Kıdemli ortaklarımızla bugün bir danışmanlık planlayın ve işletme performansınızı nasıl optimize edebileceğimizi keşfedin.",
+    getStartedToday: "Bugün Başlayın",
+    ourPeople: "Ekibimiz",
+    meetThePartners: "Ortaklarla Tanışın",
+    teamDescription: "Ekibimiz, mükemmellik ve müşteri başarısı tutkusuyla birleşen üst düzey firmalardan onlarca yıllık deneyimi bir araya getiriyor.",
+    insightsAndNews: "Haberler ve Güncellemeler",
+    insightsDescription: "Düzenleyici değişiklikler, pazar trendleri ve finansal stratejiler hakkında uzman görüşleri.",
+    readArticle: "Makaleyi Oku",
+    ourServices: "Hizmetlerimiz",
+    servicesDescription: "Benzersiz iş zorluklarınıza özel kapsamlı denetim, vergi ve danışmanlık çözümleri.",
+    viewDetails: "Detayları Gör",
+    contactUs: "Bize Ulaşın",
+    contactDescription: "Bir sohbet başlatmaya hazır mısınız? Finansal geleceğinizde size yol göstermeye hazırız.",
+    sendMessage: "Mesaj Gönder",
+    formDescription: "Aşağıdaki formu doldurun, ekibimiz en kısa sürede size dönecektir.",
+    fullName: "Ad Soyad",
+    emailAddress: "E-posta Adresi",
+    phoneOptional: "Telefon (İsteğe bağlı)",
+    companyOptional: "Şirket (İsteğe bağlı)",
+    howCanWeHelp: "Size nasıl yardımcı olabiliriz?",
+    tellUsRequirements: "Gereksinimlerinizi bize anlatın...",
+    sendingMessage: "Gönderiliyor...",
+    messageSent: "Mesaj Gönderildi",
+    thankYouMessage: "Bizimle iletişime geçtiğiniz için teşekkür ederiz. 24 saat içinde yanıt vereceğiz.",
+    error: "Hata",
+    contactInformation: "İletişim Bilgileri",
+    headquarters: "Merkez Ofis",
+    emailUs: "E-posta Gönderin",
+    callUs: "Bizi Arayın",
+    officeHours: "Çalışma Saatleri",
+    company: "Şirket",
+    servicesFooter: "Hizmetler",
+    contactFooter: "İletişim",
+    allRightsReserved: "Tüm hakları saklıdır",
+    privacyPolicy: "Gizlilik Politikası",
+    termsOfService: "Hizmet Şartları",
+    serviceNotFound: "Hizmet Bulunamadı",
+    backToServices: "Hizmetlere Dön",
+    brandDescription: "İleriye dönük işletmeler için denetim güvencesi, vergi stratejisi ve iş danışmanlığında öncü.",
+    auditAssurance: "Denetim ve Güvence",
+    taxConsultancy: "Vergi Danışmanlığı",
+    financialAdvisory: "Finansal Danışmanlık",
+    riskManagement: "Risk Yönetimi",
+    corporateFinance: "Kurumsal Finans",
+    recently: "Son Zamanlarda",
+    mondayFriday: "Pazartesi - Cuma: 9:00 - 18:00",
+    saturdaySunday: "Cumartesi - Pazar: Kapalı",
+    integrityQuote: "Dürüstlük, uygulamamızın temelidir.",
+    modernBuilding: "Modern Kurumsal Bina",
+    ourTeamAlt: "Ekibimiz",
+    mapPlaceholder: "Harita Entegrasyonu",
+    generalEmail: "Genel",
+    supportEmail: "Destek",
+    mainPhone: "Ana",
+    faxPhone: "Faks",
+    clientSuccess: "Müşteri Başarısı",
+  },
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -282,7 +369,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>(() => {
     if (typeof window !== "undefined") {
       const saved = localStorage.getItem("language");
-      if (saved && (saved === "ka" || saved === "en" || saved === "ru")) {
+      if (saved && (saved === "ka" || saved === "en" || saved === "ru" || saved === "tr")) {
         return saved;
       }
     }
