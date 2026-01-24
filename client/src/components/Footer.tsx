@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Globe, Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Footer() {
@@ -10,19 +10,11 @@ export function Footer() {
       <div className="container grid grid-cols-1 md:grid-cols-4 gap-12">
         
         <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-full bg-[#4F8FE2] flex items-center justify-center">
-              <Globe className="h-6 w-6 text-white" strokeWidth={2} />
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className="font-serif text-xl font-bold tracking-tight text-white">
-                Integra
-              </span>
-              <span className="text-[10px] font-medium text-slate-300 uppercase tracking-wider">
-                International
-              </span>
-            </div>
-          </div>
+          <img 
+              src="/assets/Integra_International_Primary_White_1769239697208.jpg" 
+              alt="Integra International" 
+              className="h-12 w-auto bg-white rounded px-2 py-1"
+            />
           <p className="text-slate-400 text-sm leading-relaxed">
             {t("brandDescription")}
           </p>
