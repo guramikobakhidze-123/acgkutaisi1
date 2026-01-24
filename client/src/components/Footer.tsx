@@ -10,11 +10,17 @@ export function Footer() {
       <div className="container grid grid-cols-1 md:grid-cols-4 gap-12">
         
         <div className="flex flex-col gap-4">
-          <img 
+          <div className="flex items-center gap-3">
+            <img 
               src="/assets/Integra_International_Primary_White_1769239697208.jpg" 
               alt="Integra International" 
-              className="h-12 w-auto bg-white rounded px-2 py-1"
+              className="h-10 w-auto bg-white rounded px-2 py-1"
             />
+            <div className="border-l border-slate-500 pl-3">
+              <span className="text-sm font-semibold text-white">ACG</span>
+              <span className="block text-xs text-slate-400">ქუთაისის ფილიალი</span>
+            </div>
+          </div>
           <p className="text-slate-400 text-sm leading-relaxed">
             {t("brandDescription")}
           </p>
