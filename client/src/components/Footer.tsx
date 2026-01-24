@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Banknote } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Footer() {
@@ -24,6 +24,16 @@ export function Footer() {
           <p className="text-slate-400 text-sm leading-relaxed">
             {t("brandDescription")}
           </p>
+          <a 
+            href="https://nbg.gov.ge/monetary-policy/currency" 
+            target="_blank" 
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-[#4F8FE2] hover:text-white transition-colors mt-2"
+            data-testid="link-nbg-rates"
+          >
+            <Banknote className="h-4 w-4" />
+            ეროვნული ბანკის გაცვლითი კურსები
+          </a>
           <div className="flex gap-4 mt-2">
             <a href="#" className="p-2 rounded-full bg-[#4F8FE2]/20 hover:bg-[#4F8FE2] transition-colors" data-testid="link-social-linkedin">
               <Linkedin className="h-4 w-4" />
