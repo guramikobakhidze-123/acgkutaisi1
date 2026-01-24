@@ -52,7 +52,7 @@ export default function Contact() {
     <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
 
-      <div className="bg-slate-900 text-white py-24">
+      <div className="bg-[#020654] text-white py-24">
         <div className="container text-center max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6" data-testid="text-contact-title">{t("contactUs")}</h1>
           <p className="text-xl text-slate-300 leading-relaxed">
@@ -65,7 +65,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           
           <div>
-            <h2 className="text-2xl font-serif font-bold text-slate-900 mb-2">{t("sendMessage")}</h2>
+            <h2 className="text-2xl font-serif font-bold text-[#020654] mb-2">{t("sendMessage")}</h2>
             <p className="text-slate-500 mb-8">{t("formDescription")}</p>
             
             <Form {...form}>
@@ -150,7 +150,7 @@ export default function Contact() {
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="w-full h-12 text-base font-semibold"
+                  className="w-full h-12 text-base font-semibold bg-[#020654] hover:bg-[#020654]/90"
                   disabled={mutation.isPending}
                   data-testid="button-submit-contact"
                 >
@@ -160,16 +160,16 @@ export default function Contact() {
             </Form>
           </div>
 
-          <div className="bg-slate-50 p-10 rounded-2xl border border-slate-100">
-            <h3 className="text-xl font-serif font-bold text-slate-900 mb-8">{t("contactInformation")}</h3>
+          <div className="bg-[#A1C9F5]/20 p-10 rounded-2xl border border-[#4F8FE2]/20">
+            <h3 className="text-xl font-serif font-bold text-[#020654] mb-8">{t("contactInformation")}</h3>
             
             <div className="space-y-8">
               <div className="flex items-start gap-4">
-                <div className="h-10 w-10 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0 text-primary">
+                <div className="h-10 w-10 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0 text-[#4F8FE2]">
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900">{t("headquarters")}</h4>
+                  <h4 className="font-bold text-[#020654]">{t("headquarters")}</h4>
                   <p className="text-slate-600 mt-1">
                     1200 Financial District Blvd, Suite 400<br />
                     New York, NY 10005, USA
@@ -178,24 +178,24 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="h-10 w-10 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0 text-primary">
+                <div className="h-10 w-10 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0 text-[#4F8FE2]">
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900">{t("emailUs")}</h4>
+                  <h4 className="font-bold text-[#020654]">{t("emailUs")}</h4>
                   <p className="text-slate-600 mt-1">
-                    {t("generalEmail")}: info@apexaudit.com<br />
-                    {t("supportEmail")}: support@apexaudit.com
+                    {t("generalEmail")}: info@integra-international.net<br />
+                    {t("supportEmail")}: support@integra-international.net
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="h-10 w-10 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0 text-primary">
+                <div className="h-10 w-10 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0 text-[#4F8FE2]">
                   <Phone className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900">{t("callUs")}</h4>
+                  <h4 className="font-bold text-[#020654]">{t("callUs")}</h4>
                   <p className="text-slate-600 mt-1">
                     {t("mainPhone")}: +1 (212) 555-0123<br />
                     {t("faxPhone")}: +1 (212) 555-0124
@@ -204,11 +204,11 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="h-10 w-10 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0 text-primary">
+                <div className="h-10 w-10 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0 text-[#4F8FE2]">
                   <Clock className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900">{t("officeHours")}</h4>
+                  <h4 className="font-bold text-[#020654]">{t("officeHours")}</h4>
                   <p className="text-slate-600 mt-1">
                     {t("mondayFriday")}<br />
                     {t("saturdaySunday")}
@@ -217,8 +217,8 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="mt-10 h-48 bg-slate-200 rounded-xl w-full flex items-center justify-center">
-              <span className="text-slate-400 font-medium">{t("mapPlaceholder")}</span>
+            <div className="mt-10 h-48 bg-[#020654]/10 rounded-xl w-full flex items-center justify-center">
+              <span className="text-[#020654]/50 font-medium">{t("mapPlaceholder")}</span>
             </div>
           </div>
         </div>

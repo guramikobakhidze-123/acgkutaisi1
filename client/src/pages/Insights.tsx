@@ -11,12 +11,12 @@ export default function Insights() {
   const { t, getText } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col">
+    <div className="min-h-screen bg-[#A1C9F5]/10 flex flex-col">
       <Navbar />
 
       <div className="bg-white border-b py-24">
         <div className="container max-w-4xl text-center">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-slate-900" data-testid="text-insights-title">{t("insightsAndNews")}</h1>
+          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-[#020654]" data-testid="text-insights-title">{t("insightsAndNews")}</h1>
           <p className="text-xl text-slate-600 leading-relaxed">
             {t("insightsDescription")}
           </p>
@@ -47,13 +47,13 @@ export default function Insights() {
                       <Calendar className="h-3.5 w-3.5" />
                       {post.publishedAt ? format(new Date(post.publishedAt), 'MMMM d, yyyy') : t("recently")}
                     </div>
-                    <h2 className="text-xl font-serif font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors">
+                    <h2 className="text-xl font-serif font-bold text-[#020654] mb-3 group-hover:text-[#4F8FE2] transition-colors">
                       {getText(post.title)}
                     </h2>
                     <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">
                       {getText(post.summary)}
                     </p>
-                    <div className="flex items-center text-primary font-medium text-sm group-hover:translate-x-2 transition-transform">
+                    <div className="flex items-center text-[#4F8FE2] font-medium text-sm group-hover:translate-x-2 transition-transform">
                       {t("readArticle")} <ArrowRight className="ml-2 h-4 w-4" />
                     </div>
                   </div>

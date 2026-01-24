@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowRight, Shield, Briefcase } from "lucide-react";
+import { ArrowRight, Shield, Briefcase, Globe } from "lucide-react";
 import { useServices } from "@/hooks/use-content";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -35,8 +35,8 @@ export default function Home() {
             alt={t("modernBuilding")} 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-slate-900/70 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[#020654]/80 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#020654] via-transparent to-transparent" />
         </div>
 
         <div className="container relative z-10 text-center text-white max-w-4xl px-4">
@@ -52,7 +52,7 @@ export default function Home() {
               data-testid="text-hero-title"
             >
               {t("heroTitle")} <br/>
-              <span className="text-blue-400">{t("heroTitleHighlight")}</span>
+              <span className="text-[#4F8FE2]">{t("heroTitleHighlight")}</span>
             </motion.h1>
             
             <motion.p 
@@ -65,12 +65,12 @@ export default function Home() {
 
             <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Link href="/contact">
-                <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-primary hover:bg-primary/90" data-testid="button-hero-consultation">
+                <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-[#4F8FE2] hover:bg-[#4F8FE2]/90" data-testid="button-hero-consultation">
                   {t("getConsultation")}
                 </Button>
               </Link>
               <Link href="/services">
-                <Button size="lg" variant="outline" className="h-14 px-8 text-lg rounded-full bg-white/10 border-white/20 text-white hover:bg-white hover:text-slate-900 backdrop-blur-sm" data-testid="button-hero-services">
+                <Button size="lg" variant="outline" className="h-14 px-8 text-lg rounded-full bg-white/10 border-white/20 text-white hover:bg-white hover:text-[#020654] backdrop-blur-sm" data-testid="button-hero-services">
                   {t("exploreServices")}
                 </Button>
               </Link>
@@ -89,7 +89,7 @@ export default function Home() {
               { label: t("consultants"), value: "50+" },
             ].map((stat, i) => (
               <div key={i} className="space-y-2" data-testid={`stat-${i}`}>
-                <p className="text-4xl md:text-5xl font-serif font-bold text-primary">{stat.value}</p>
+                <p className="text-4xl md:text-5xl font-serif font-bold text-[#020654]">{stat.value}</p>
                 <p className="text-sm font-medium text-muted-foreground uppercase tracking-wide">{stat.label}</p>
               </div>
             ))}
@@ -97,15 +97,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-slate-50">
+      <section className="py-24 bg-[#A1C9F5]/10">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div className="max-w-2xl">
-              <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-3">{t("ourExpertise")}</h2>
-              <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">{t("comprehensiveSolutions")}</h3>
+              <h2 className="text-sm font-bold text-[#4F8FE2] tracking-widest uppercase mb-3">{t("ourExpertise")}</h2>
+              <h3 className="text-4xl md:text-5xl font-serif font-bold text-[#020654]">{t("comprehensiveSolutions")}</h3>
             </div>
             <Link href="/services">
-              <Button variant="ghost" className="group text-lg" data-testid="button-view-all-services">
+              <Button variant="ghost" className="group text-lg text-[#020654]" data-testid="button-view-all-services">
                 {t("viewAllServices")} <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
@@ -117,12 +117,12 @@ export default function Home() {
             ) : services?.slice(0, 3).map((service) => (
               <Link key={service.id} href={`/services/${service.slug}`}>
                 <div className="group h-full bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 cursor-pointer" data-testid={`card-service-${service.id}`}>
-                  <div className="h-14 w-14 bg-blue-50 rounded-xl flex items-center justify-center mb-8 group-hover:bg-primary transition-colors">
-                    <Briefcase className="h-7 w-7 text-primary group-hover:text-white transition-colors" />
+                  <div className="h-14 w-14 bg-[#4F8FE2]/10 rounded-xl flex items-center justify-center mb-8 group-hover:bg-[#020654] transition-colors">
+                    <Briefcase className="h-7 w-7 text-[#4F8FE2] group-hover:text-white transition-colors" />
                   </div>
-                  <h4 className="text-2xl font-serif font-bold mb-4 text-slate-900">{getText(service.title)}</h4>
+                  <h4 className="text-2xl font-serif font-bold mb-4 text-[#020654]">{getText(service.title)}</h4>
                   <p className="text-slate-500 leading-relaxed mb-8">{getText(service.description)}</p>
-                  <div className="flex items-center text-primary font-medium group-hover:translate-x-2 transition-transform">
+                  <div className="flex items-center text-[#4F8FE2] font-medium group-hover:translate-x-2 transition-transform">
                     {t("learnMore")} <ArrowRight className="ml-2 h-4 w-4" />
                   </div>
                 </div>
@@ -141,15 +141,15 @@ export default function Home() {
                 alt={t("ourTeamAlt")} 
                 className="rounded-2xl shadow-2xl"
               />
-              <div className="absolute -bottom-8 -right-8 bg-primary p-8 rounded-2xl text-white max-w-xs shadow-xl hidden md:block">
+              <div className="absolute -bottom-8 -right-8 bg-[#020654] p-8 rounded-2xl text-white max-w-xs shadow-xl hidden md:block">
                 <p className="font-serif text-2xl font-bold mb-2">"{t("integrityQuote")}"</p>
-                <p className="text-blue-200 text-sm">— Sarah Jenkins, CEO</p>
+                <p className="text-[#4F8FE2] text-sm">— Sarah Jenkins, CEO</p>
               </div>
             </div>
             
             <div className="space-y-8">
-              <h2 className="text-sm font-bold text-primary tracking-widest uppercase">{t("whyChooseUs")}</h2>
-              <h3 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">{t("partnerYouCanTrust")}</h3>
+              <h2 className="text-sm font-bold text-[#4F8FE2] tracking-widest uppercase">{t("whyChooseUs")}</h2>
+              <h3 className="text-4xl md:text-5xl font-serif font-bold text-[#020654]">{t("partnerYouCanTrust")}</h3>
               <p className="text-lg text-slate-600 leading-relaxed">
                 {t("trustDescription")}
               </p>
@@ -161,11 +161,11 @@ export default function Home() {
                   { title: t("riskMitigation"), desc: t("riskMitigationDesc") },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4">
-                    <div className="mt-1 h-6 w-6 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
-                      <Shield className="h-3.5 w-3.5 text-primary" />
+                    <div className="mt-1 h-6 w-6 rounded-full bg-[#4F8FE2]/10 flex items-center justify-center shrink-0">
+                      <Shield className="h-3.5 w-3.5 text-[#4F8FE2]" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900">{item.title}</h4>
+                      <h4 className="font-bold text-[#020654]">{item.title}</h4>
                       <p className="text-slate-500">{item.desc}</p>
                     </div>
                   </div>
@@ -176,15 +176,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/10" />
+      <section className="py-24 bg-[#020654] text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[#4F8FE2]/10" />
         <div className="container relative z-10 text-center max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">{t("readyToElevate")}</h2>
           <p className="text-slate-300 text-lg mb-10 leading-relaxed">
             {t("scheduleConsultation")}
           </p>
           <Link href="/contact">
-            <Button size="lg" className="h-14 px-10 text-lg rounded-full bg-white text-slate-900 hover:bg-slate-100 font-semibold shadow-2xl" data-testid="button-cta-start">
+            <Button size="lg" className="h-14 px-10 text-lg rounded-full bg-[#4F8FE2] text-white hover:bg-[#4F8FE2]/90 font-semibold shadow-2xl" data-testid="button-cta-start">
               {t("getStartedToday")}
             </Button>
           </Link>

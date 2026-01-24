@@ -1,7 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { ShieldCheck, Menu } from "lucide-react";
+import { Globe, Menu } from "lucide-react";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
@@ -25,14 +25,16 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-20 items-center justify-between">
         <div className="flex items-center gap-2">
-          <Link href="/" className="flex items-center gap-2" data-testid="link-logo">
-            <ShieldCheck className="h-8 w-8 text-primary" strokeWidth={2.5} />
+          <Link href="/" className="flex items-center gap-3" data-testid="link-logo">
+            <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
+              <Globe className="h-6 w-6 text-white" strokeWidth={2} />
+            </div>
             <div className="flex flex-col leading-none">
               <span className="font-serif text-xl font-bold tracking-tight text-foreground">
-                Apex Audit
+                Integra
               </span>
               <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider">
-                Consulting Group
+                International
               </span>
             </div>
           </Link>
