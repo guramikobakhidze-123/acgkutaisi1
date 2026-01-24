@@ -31,7 +31,7 @@ export default function Home() {
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9H7tYXoND2spEIH92VdyePpUhUblT98Qeiw&s" 
+            src="/assets/kutaisi-hero.jpg" 
             alt={t("modernBuilding")} 
             className="w-full h-full object-cover"
           />
