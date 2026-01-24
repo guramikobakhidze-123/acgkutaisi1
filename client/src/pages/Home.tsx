@@ -31,7 +31,7 @@ export default function Home() {
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9H7tYXoND2spEIH92VdyePpUhUblT98Qeiw&s" 
             alt={t("modernBuilding")} 
             className="w-full h-full object-cover"
           />
