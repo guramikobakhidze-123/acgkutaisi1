@@ -1,23 +1,26 @@
-import { pgTable, text, serial, timestamp, boolean } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, timestamp, boolean, jsonb } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
+
+// Multi-language structure
+// { ka: "ტექსტი", en: "Text", ru: "Текст" }
 
 // Services provided by the firm
 export const services = pgTable("services", {
   id: serial("id").primaryKey(),
-  title: text("title").notNull(),
-  description: text("description").notNull(),
-  fullContent: text("full_content").notNull(), // Detailed description for individual service page
-  icon: text("icon").notNull(), // Lucide icon name
+  title: jsonb("title").notNull(), // { ka, en, ru }
+  description: jsonb("description").notNull(),
+  fullContent: jsonb("full_content").notNull(),
+  icon: text("icon").notNull(),
   slug: text("slug").notNull().unique(),
 });
 
 // Team members / Partners
 export const teamMembers = pgTable("team_members", {
   id: serial("id").primaryKey(),
-  name: text("name").notNull(),
-  role: text("role").notNull(),
-  bio: text("bio").notNull(),
+  name: jsonb("name").notNull(),
+  role: jsonb("role").notNull(),
+  bio: jsonb("bio").notNull(),
   imageUrl: text("image_url").notNull(),
   linkedinUrl: text("linkedin_url"),
 });
@@ -25,10 +28,10 @@ export const teamMembers = pgTable("team_members", {
 // Insights / Blog posts
 export const posts = pgTable("posts", {
   id: serial("id").primaryKey(),
-  title: text("title").notNull(),
+  title: jsonb("title").notNull(),
   slug: text("slug").notNull().unique(),
-  summary: text("summary").notNull(),
-  content: text("content").notNull(),
+  summary: jsonb("summary").notNull(),
+  content: jsonb("content").notNull(),
   coverImageUrl: text("cover_image_url"),
   publishedAt: timestamp("published_at").defaultNow(),
 });
@@ -52,13 +55,12 @@ export const insertContactRequestSchema = createInsertSchema(contactRequests).om
 
 // Types
 export type Service = typeof services.$inferSelect;
-export type InsertService = z.infer<typeof insertServiceSchema>;
-
 export type TeamMember = typeof teamMembers.$inferSelect;
-export type InsertTeamMember = z.infer<typeof insertTeamMemberSchema>;
-
 export type Post = typeof posts.$inferSelect;
-export type InsertPost = z.infer<typeof insertPostSchema>;
-
 export type ContactRequest = typeof contactRequests.$inferSelect;
-export type InsertContactRequest = z.infer<typeof insertContactRequestSchema>;
+
+export type I18nString = {
+  ka: string;
+  en: string;
+  ru: string;
+};

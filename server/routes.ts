@@ -11,57 +11,85 @@ async function seedDatabase() {
   if (existingServices.length === 0) {
     await db.insert(services).values([
       {
-        title: "ფინანსური აუდიტი",
+        title: {
+          ka: "ფინანსური აუდიტი",
+          en: "Financial Audit",
+          ru: "Финансовый аудит"
+        },
         slug: "financial-audit",
-        description: "ჩვენი გუნდი უზრუნველყოფს ფინანსური ანგარიშგების სიზუსტესა და სანდოობას.",
-        fullContent: "ჩვენ გთავაზობთ სრულ ფინანსურ აუდიტს საერთაშორისო სტანდარტების შესაბამისად...",
+        description: {
+          ka: "ჩვენი გუნდი უზრუნველყოფს ფინანსური ანგარიშგების სიზუსტესა და სანდოობას.",
+          en: "Our team ensures the accuracy and reliability of financial statements.",
+          ru: "Наша команда обеспечивает точность и надежность финансовой отчетности."
+        },
+        fullContent: {
+          ka: "ჩვენ გთავაზობთ სრულ ფინანსურ აუდიტს საერთაშორისო სტანდარტების შესაბამისად...",
+          en: "We offer a full financial audit in accordance with international standards...",
+          ru: "Мы предлагаем полный финансовый аудит в соответствии с международными стандартами..."
+        },
         icon: "Calculator"
       },
       {
-        title: "საგადასახადო კონსულტაცია",
+        title: {
+          ka: "საგადასახადო კონსულტაცია",
+          en: "Tax Consulting",
+          ru: "Налоговое консультирование"
+        },
         slug: "tax-consulting",
-        description: "საგადასახადო რისკების მართვა და ოპტიმიზაცია თქვენი ბიზნესისთვის.",
-        fullContent: "ჩვენი საგადასახადო ექსპერტები დაგეხმარებიან საგადასახადო ვალდებულებების სწორად დაგეგმვაში...",
+        description: {
+          ka: "საგადასახადო რისკების მართვა და ოპტიმიზაცია თქვენი ბიზნესისთვის.",
+          en: "Tax risk management and optimization for your business.",
+          ru: "Управление налоговыми рисками и оптимизация для вашего бизнеса."
+        },
+        fullContent: {
+          ka: "ჩვენი საგადასახადო ექსპერტები დაგეხმარებიან საგადასახადო ვალდებულებების სწორად დაგეგმვაში...",
+          en: "Our tax experts will help you properly plan your tax obligations...",
+          ru: "Наши налоговые эксперты помогут вам правильно спланировать ваши налоговые обязательства..."
+        },
         icon: "FileText"
-      },
-      {
-        title: "ბიზნეს კონსულტაცია",
-        slug: "business-advisory",
-        description: "სტრატეგიული დაგეგმარება და ბიზნეს პროცესების ეფექტიანობის ზრდა.",
-        fullContent: "გთავაზობთ კომპლექსურ ბიზნეს კონსულტაციებს კომპანიის განვითარების ყველა ეტაპზე...",
-        icon: "TrendingUp"
       }
     ]);
 
     await db.insert(teamMembers).values([
       {
-        name: "გიორგი ბერიძე",
-        role: "მმართველი პარტნიორი",
-        bio: "15 წლიანი გამოცდილება აუდიტსა და ფინანსურ მენეჯმენტში.",
+        name: {
+          ka: "გიორგი ბერიძე",
+          en: "Giorgi Beridze",
+          ru: "Георгий Беридзе"
+        },
+        role: {
+          ka: "მმართველი პარტნიორი",
+          en: "Managing Partner",
+          ru: "Управляющий партнер"
+        },
+        bio: {
+          ka: "15 წლიანი გამოცდილება აუდიტსა და ფინანსურ მენეჯმენტში.",
+          en: "15 years of experience in audit and financial management.",
+          ru: "15 лет опыта в аудите и финансовом менеджменте."
+        },
         imageUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop"
-      },
-      {
-        name: "ნინო მაისურაძე",
-        role: "აუდიტის დეპარტამენტის უფროსი",
-        bio: "ACCA სერტიფიცირებული აუდიტორი საერთაშორისო გამოცდილებით.",
-        imageUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop"
       }
     ]);
 
     await db.insert(posts).values([
       {
-        title: "ახალი საგადასახადო რეგულაციები 2025",
+        title: {
+          ka: "ახალი საგადასახადო რეგულაციები 2025",
+          en: "New Tax Regulations 2025",
+          ru: "Новые налоговые правила 2025"
+        },
         slug: "new-tax-regulations-2025",
-        summary: "მნიშვნელოვანი ცვლილებები მოგების გადასახადის კანონმდებლობაში.",
-        content: "2025 წლიდან ძალაში შედის ახალი საგადასახადო რეგულაციები, რომლებიც გავლენას მოახდენს...",
+        summary: {
+          ka: "მნიშვნელოვანი ცვლილებები მოგების გადასახადის კანონმდებლობაში.",
+          en: "Significant changes in the profit tax legislation.",
+          ru: "Существенные изменения в законодательстве о налоге на прибыль."
+        },
+        content: {
+          ka: "2025 წლიდან ძალაში შედის ახალი საგადასახადო რეგულაციები...",
+          en: "From 2025, new tax regulations will come into force...",
+          ru: "С 2025 года вступят в силу новые налоговые правила..."
+        },
         coverImageUrl: "https://images.unsplash.com/photo-1554224155-98406852d0aa?w=800&h=400&fit=crop"
-      },
-      {
-        title: "როგორ მოვემზადოთ აუდიტისთვის?",
-        slug: "how-to-prepare-for-audit",
-        summary: "პრაქტიკული რჩევები ფინანსური აუდიტის პროცესის გასამარტივებლად.",
-        content: "აუდიტის პროცესი შეიძლება იყოს სტრესული, თუმცა სწორი მომზადებით...",
-        coverImageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop"
       }
     ]);
   }
@@ -71,7 +99,6 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
-  // Seed data on startup
   seedDatabase().catch(console.error);
 
   app.get(api.services.list.path, async (_req, res) => {
