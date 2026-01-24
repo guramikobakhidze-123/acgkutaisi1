@@ -11,10 +11,12 @@ import { useToast } from "@/hooks/use-toast";
 import { MapPin, Mail, Phone, Clock } from "lucide-react";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { z } from "zod";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Contact() {
   const { toast } = useToast();
   const mutation = useSubmitContact();
+  const { t } = useLanguage();
   
   const form = useForm<z.infer<typeof insertContactRequestSchema>>({
     resolver: zodResolver(insertContactRequestSchema),
@@ -31,14 +33,14 @@ export default function Contact() {
     mutation.mutate(data, {
       onSuccess: () => {
         toast({
-          title: "Message Sent",
-          description: "Thank you for contacting us. We will respond within 24 hours.",
+          title: t("messageSent"),
+          description: t("thankYouMessage"),
         });
         form.reset();
       },
       onError: (error) => {
         toast({
-          title: "Error",
+          title: t("error"),
           description: error.message,
           variant: "destructive",
         });
@@ -50,12 +52,11 @@ export default function Contact() {
     <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
 
-      {/* Header */}
       <div className="bg-slate-900 text-white py-24">
         <div className="container text-center max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Contact Us</h1>
+          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6" data-testid="text-contact-title">{t("contactUs")}</h1>
           <p className="text-xl text-slate-300 leading-relaxed">
-            Ready to start a conversation? We're here to help you navigate your financial future.
+            {t("contactDescription")}
           </p>
         </div>
       </div>
@@ -63,22 +64,21 @@ export default function Contact() {
       <div className="container py-24 -mt-16 bg-white rounded-t-3xl shadow-xl border border-slate-100">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           
-          {/* Contact Form */}
           <div>
-            <h2 className="text-2xl font-serif font-bold text-slate-900 mb-2">Send us a Message</h2>
-            <p className="text-slate-500 mb-8">Fill out the form below and our team will get back to you shortly.</p>
+            <h2 className="text-2xl font-serif font-bold text-slate-900 mb-2">{t("sendMessage")}</h2>
+            <p className="text-slate-500 mb-8">{t("formDescription")}</p>
             
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" data-testid="form-contact">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <FormField
                     control={form.control}
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Full Name</FormLabel>
+                        <FormLabel>{t("fullName")}</FormLabel>
                         <FormControl>
-                          <Input placeholder="John Doe" {...field} className="h-12" />
+                          <Input placeholder="John Doe" {...field} className="h-12" data-testid="input-name" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -89,9 +89,9 @@ export default function Contact() {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email Address</FormLabel>
+                        <FormLabel>{t("emailAddress")}</FormLabel>
                         <FormControl>
-                          <Input placeholder="john@company.com" {...field} className="h-12" />
+                          <Input placeholder="john@company.com" {...field} className="h-12" data-testid="input-email" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -105,9 +105,9 @@ export default function Contact() {
                     name="phone"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Phone (Optional)</FormLabel>
+                        <FormLabel>{t("phoneOptional")}</FormLabel>
                         <FormControl>
-                          <Input placeholder="+1 (555) 000-0000" {...field} value={field.value || ''} className="h-12" />
+                          <Input placeholder="+1 (555) 000-0000" {...field} value={field.value || ''} className="h-12" data-testid="input-phone" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -118,9 +118,9 @@ export default function Contact() {
                     name="company"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Company (Optional)</FormLabel>
+                        <FormLabel>{t("companyOptional")}</FormLabel>
                         <FormControl>
-                          <Input placeholder="Your Company Ltd." {...field} value={field.value || ''} className="h-12" />
+                          <Input placeholder="Your Company Ltd." {...field} value={field.value || ''} className="h-12" data-testid="input-company" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -133,12 +133,13 @@ export default function Contact() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>How can we help?</FormLabel>
+                      <FormLabel>{t("howCanWeHelp")}</FormLabel>
                       <FormControl>
                         <Textarea 
-                          placeholder="Tell us about your requirements..." 
+                          placeholder={t("tellUsRequirements")} 
                           className="min-h-[150px] resize-none text-base" 
-                          {...field} 
+                          {...field}
+                          data-testid="input-message"
                         />
                       </FormControl>
                       <FormMessage />
@@ -151,16 +152,16 @@ export default function Contact() {
                   size="lg" 
                   className="w-full h-12 text-base font-semibold"
                   disabled={mutation.isPending}
+                  data-testid="button-submit-contact"
                 >
-                  {mutation.isPending ? "Sending Message..." : "Send Message"}
+                  {mutation.isPending ? t("sendingMessage") : t("sendMessage")}
                 </Button>
               </form>
             </Form>
           </div>
 
-          {/* Contact Info */}
           <div className="bg-slate-50 p-10 rounded-2xl border border-slate-100">
-            <h3 className="text-xl font-serif font-bold text-slate-900 mb-8">Contact Information</h3>
+            <h3 className="text-xl font-serif font-bold text-slate-900 mb-8">{t("contactInformation")}</h3>
             
             <div className="space-y-8">
               <div className="flex items-start gap-4">
@@ -168,7 +169,7 @@ export default function Contact() {
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900">Headquarters</h4>
+                  <h4 className="font-bold text-slate-900">{t("headquarters")}</h4>
                   <p className="text-slate-600 mt-1">
                     1200 Financial District Blvd, Suite 400<br />
                     New York, NY 10005, USA
@@ -181,10 +182,10 @@ export default function Contact() {
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900">Email Us</h4>
+                  <h4 className="font-bold text-slate-900">{t("emailUs")}</h4>
                   <p className="text-slate-600 mt-1">
-                    General: info@apexaudit.com<br />
-                    Support: support@apexaudit.com
+                    {t("generalEmail")}: info@apexaudit.com<br />
+                    {t("supportEmail")}: support@apexaudit.com
                   </p>
                 </div>
               </div>
@@ -194,10 +195,10 @@ export default function Contact() {
                   <Phone className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900">Call Us</h4>
+                  <h4 className="font-bold text-slate-900">{t("callUs")}</h4>
                   <p className="text-slate-600 mt-1">
-                    Main: +1 (212) 555-0123<br />
-                    Fax: +1 (212) 555-0124
+                    {t("mainPhone")}: +1 (212) 555-0123<br />
+                    {t("faxPhone")}: +1 (212) 555-0124
                   </p>
                 </div>
               </div>
@@ -207,18 +208,17 @@ export default function Contact() {
                   <Clock className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-slate-900">Office Hours</h4>
+                  <h4 className="font-bold text-slate-900">{t("officeHours")}</h4>
                   <p className="text-slate-600 mt-1">
-                    Monday - Friday: 9:00 AM - 6:00 PM EST<br />
-                    Saturday - Sunday: Closed
+                    {t("mondayFriday")}<br />
+                    {t("saturdaySunday")}
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Map Placeholder */}
             <div className="mt-10 h-48 bg-slate-200 rounded-xl w-full flex items-center justify-center">
-              <span className="text-slate-400 font-medium">Google Maps Integration</span>
+              <span className="text-slate-400 font-medium">{t("mapPlaceholder")}</span>
             </div>
           </div>
         </div>

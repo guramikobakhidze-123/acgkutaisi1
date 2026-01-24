@@ -2,9 +2,11 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { useTeam } from "@/hooks/use-content";
 import { Linkedin, Mail } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Team() {
   const { data: team, isLoading } = useTeam();
+  const { t, getText } = useLanguage();
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -12,10 +14,10 @@ export default function Team() {
 
       <div className="bg-slate-50 py-24">
         <div className="container text-center max-w-3xl">
-          <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-3">Our People</h2>
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-slate-900">Meet the Partners</h1>
+          <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-3">{t("ourPeople")}</h2>
+          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-slate-900" data-testid="text-team-title">{t("meetThePartners")}</h1>
           <p className="text-xl text-slate-600 leading-relaxed">
-            Our team brings together decades of experience from top-tier firms, united by a passion for excellence and client success.
+            {t("teamDescription")}
           </p>
         </div>
       </div>
@@ -28,11 +30,11 @@ export default function Team() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {team?.map((member) => (
-              <div key={member.id} className="group">
+              <div key={member.id} className="group" data-testid={`card-team-${member.id}`}>
                 <div className="relative overflow-hidden rounded-2xl mb-6 shadow-md aspect-[3/4]">
                   <img 
                     src={member.imageUrl} 
-                    alt={member.name}
+                    alt={getText(member.name)}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
@@ -44,17 +46,17 @@ export default function Team() {
                           <Linkedin className="h-5 w-5" />
                         </a>
                       )}
-                      <a href={`mailto:${member.name.toLowerCase().replace(' ', '.')}@apexaudit.com`} className="bg-white/20 hover:bg-white text-white hover:text-slate-900 p-2 rounded-full backdrop-blur-sm transition-colors">
+                      <a href={`mailto:contact@apexaudit.com`} className="bg-white/20 hover:bg-white text-white hover:text-slate-900 p-2 rounded-full backdrop-blur-sm transition-colors">
                         <Mail className="h-5 w-5" />
                       </a>
                     </div>
                   </div>
                 </div>
                 
-                <h3 className="text-2xl font-serif font-bold text-slate-900">{member.name}</h3>
-                <p className="text-primary font-medium mb-3 uppercase tracking-wider text-xs">{member.role}</p>
+                <h3 className="text-2xl font-serif font-bold text-slate-900">{getText(member.name)}</h3>
+                <p className="text-primary font-medium mb-3 uppercase tracking-wider text-xs">{getText(member.role)}</p>
                 <p className="text-slate-500 leading-relaxed text-sm">
-                  {member.bio}
+                  {getText(member.bio)}
                 </p>
               </div>
             ))}

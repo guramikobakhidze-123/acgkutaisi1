@@ -1,19 +1,22 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { ShieldCheck, Menu, X } from "lucide-react";
+import { ShieldCheck, Menu } from "lucide-react";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Navbar() {
   const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useLanguage();
 
   const links = [
-    { href: "/", label: "Home" },
-    { href: "/services", label: "Services" },
-    { href: "/team", label: "Team" },
-    { href: "/insights", label: "Insights" },
+    { href: "/", label: t("home") },
+    { href: "/services", label: t("services") },
+    { href: "/team", label: t("team") },
+    { href: "/insights", label: t("insights") },
   ];
 
   const isActive = (path: string) => location === path;
@@ -22,7 +25,7 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-20 items-center justify-between">
         <div className="flex items-center gap-2">
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2" data-testid="link-logo">
             <ShieldCheck className="h-8 w-8 text-primary" strokeWidth={2.5} />
             <div className="flex flex-col leading-none">
               <span className="font-serif text-xl font-bold tracking-tight text-foreground">
@@ -35,7 +38,6 @@ export function Navbar() {
           </Link>
         </div>
 
-        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           <div className="flex items-center gap-6">
             {links.map((link) => (
@@ -48,6 +50,7 @@ export function Navbar() {
                     ? "text-primary font-semibold"
                     : "text-muted-foreground"
                 )}
+                data-testid={`link-nav-${link.href.replace("/", "") || "home"}`}
               >
                 {link.label}
                 {isActive(link.href) && (
@@ -56,18 +59,19 @@ export function Navbar() {
               </Link>
             ))}
           </div>
+          <LanguageSwitcher />
           <Link href="/contact">
-            <Button size="lg" className="rounded-full px-8 shadow-lg shadow-primary/20 hover:shadow-primary/30">
-              Get a Consultation
+            <Button size="lg" className="rounded-full px-8 shadow-lg shadow-primary/20 hover:shadow-primary/30" data-testid="button-cta-consultation">
+              {t("getConsultation")}
             </Button>
           </Link>
         </div>
 
-        {/* Mobile Nav */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
+          <LanguageSwitcher />
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" data-testid="button-mobile-menu">
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
@@ -89,7 +93,7 @@ export function Navbar() {
                   </Link>
                 ))}
                 <Link href="/contact" onClick={() => setIsOpen(false)}>
-                  <Button className="w-full mt-4" size="lg">Get a Consultation</Button>
+                  <Button className="w-full mt-4" size="lg">{t("getConsultation")}</Button>
                 </Link>
               </div>
             </SheetContent>
