@@ -44,9 +44,14 @@ export default function Consulting() {
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6" data-testid="text-consulting-title">
             {t("consultingServices")}
           </h1>
-          <p className="text-xl text-slate-300 max-w-3xl leading-relaxed">
+          <p className="text-xl text-slate-300 max-w-3xl leading-relaxed mb-8">
             {t("consultingDescription")}
           </p>
+          <Link href="/contact">
+            <Button size="lg" className="bg-[#4F8FE2] hover:bg-[#4F8FE2]/90 rounded-full px-10" data-testid="button-consultation-hero">
+              {t("getConsultation")}
+            </Button>
+          </Link>
         </div>
       </div>
 
