@@ -26,6 +26,7 @@ export function Navbar() {
 
   const serviceItems = [
     { href: "/services/audit-assurance", label: t("auditAssurance") },
+    { href: "/services/financial-services", label: t("financialServices") },
   ];
 
   const isActive = (path: string) => location === path;
