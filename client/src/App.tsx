@@ -11,12 +11,14 @@ import ServiceDetail from "@/pages/ServiceDetail";
 import Team from "@/pages/Team";
 import Insights from "@/pages/Insights";
 import Contact from "@/pages/Contact";
+import Consulting from "@/pages/Consulting";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/services" component={Services} />
+      <Route path="/services/consulting" component={Consulting} />
       <Route path="/services/:slug" component={ServiceDetail} />
       <Route path="/team" component={Team} />
       <Route path="/insights" component={Insights} />
