@@ -1,9 +1,15 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Menu } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -14,12 +20,16 @@ export function Navbar() {
 
   const links = [
     { href: "/", label: t("home") },
-    { href: "/services", label: t("services") },
     { href: "/team", label: t("team") },
     { href: "/insights", label: t("insights") },
   ];
 
+  const serviceItems = [
+    { href: "/services/audit-assurance", label: t("auditAssurance") },
+  ];
+
   const isActive = (path: string) => location === path;
+  const isServicesActive = location.startsWith("/services");
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -40,7 +50,60 @@ export function Navbar() {
 
         <div className="hidden md:flex items-center gap-8">
           <div className="flex items-center gap-6">
-            {links.map((link) => (
+            {links.slice(0, 1).map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-primary relative py-1",
+                  isActive(link.href)
+                    ? "text-primary font-semibold"
+                    : "text-muted-foreground"
+                )}
+                data-testid={`link-nav-${link.href.replace("/", "") || "home"}`}
+              >
+                {link.label}
+                {isActive(link.href) && (
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full animate-in fade-in zoom-in duration-200" />
+                )}
+              </Link>
+            ))}
+            
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button
+                  className={cn(
+                    "text-sm font-medium transition-colors hover:text-primary relative py-1 flex items-center gap-1 outline-none",
+                    isServicesActive
+                      ? "text-primary font-semibold"
+                      : "text-muted-foreground"
+                  )}
+                  data-testid="dropdown-services"
+                >
+                  {t("services")}
+                  <ChevronDown className="h-4 w-4" />
+                  {isServicesActive && (
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full animate-in fade-in zoom-in duration-200" />
+                  )}
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-56">
+                <DropdownMenuItem asChild>
+                  <Link href="/services" className="w-full cursor-pointer" data-testid="link-all-services">
+                    {t("viewAllServices")}
+                  </Link>
+                </DropdownMenuItem>
+                {serviceItems.map((item) => (
+                  <DropdownMenuItem key={item.href} asChild>
+                    <Link href={item.href} className="w-full cursor-pointer" data-testid={`link-service-${item.href.split('/').pop()}`}>
+                      {item.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {links.slice(1).map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -77,21 +140,71 @@ export function Navbar() {
             </SheetTrigger>
             <SheetContent>
               <div className="flex flex-col gap-6 mt-10">
-                {links.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className={cn(
-                      "text-lg font-medium transition-colors hover:text-primary",
-                      isActive(link.href)
-                        ? "text-primary font-semibold"
-                        : "text-muted-foreground"
-                    )}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+                <Link
+                  href="/"
+                  onClick={() => setIsOpen(false)}
+                  className={cn(
+                    "text-lg font-medium transition-colors hover:text-primary",
+                    isActive("/")
+                      ? "text-primary font-semibold"
+                      : "text-muted-foreground"
+                  )}
+                >
+                  {t("home")}
+                </Link>
+                
+                <div className="flex flex-col gap-2">
+                  <span className={cn(
+                    "text-lg font-medium",
+                    isServicesActive ? "text-primary font-semibold" : "text-muted-foreground"
+                  )}>
+                    {t("services")}
+                  </span>
+                  <div className="pl-4 flex flex-col gap-2 border-l-2 border-muted">
+                    <Link
+                      href="/services"
+                      onClick={() => setIsOpen(false)}
+                      className="text-sm text-muted-foreground hover:text-primary"
+                    >
+                      {t("viewAllServices")}
+                    </Link>
+                    {serviceItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className="text-sm text-muted-foreground hover:text-primary"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                <Link
+                  href="/team"
+                  onClick={() => setIsOpen(false)}
+                  className={cn(
+                    "text-lg font-medium transition-colors hover:text-primary",
+                    isActive("/team")
+                      ? "text-primary font-semibold"
+                      : "text-muted-foreground"
+                  )}
+                >
+                  {t("team")}
+                </Link>
+                <Link
+                  href="/insights"
+                  onClick={() => setIsOpen(false)}
+                  className={cn(
+                    "text-lg font-medium transition-colors hover:text-primary",
+                    isActive("/insights")
+                      ? "text-primary font-semibold"
+                      : "text-muted-foreground"
+                  )}
+                >
+                  {t("insights")}
+                </Link>
                 <Link href="/contact" onClick={() => setIsOpen(false)}>
                   <Button className="w-full mt-4" size="lg">{t("getConsultation")}</Button>
                 </Link>
