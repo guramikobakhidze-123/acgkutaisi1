@@ -19,6 +19,7 @@ interface LanguageContextType {
 const translations = {
   ka: {
     home: "მთავარი",
+    aboutUs: "ჩვენს შესახებ",
     services: "სერვისები",
     team: "გუნდი",
     partners: "პარტნიორები",
@@ -117,6 +118,7 @@ const translations = {
   },
   en: {
     home: "Home",
+    aboutUs: "About Us",
     services: "Services",
     team: "Team",
     partners: "Partners",
@@ -215,6 +217,7 @@ const translations = {
   },
   ru: {
     home: "Главная",
+    aboutUs: "О нас",
     services: "Услуги",
     team: "Команда",
     partners: "Партнеры",
@@ -313,6 +316,7 @@ const translations = {
   },
   tr: {
     home: "Ana Sayfa",
+    aboutUs: "Hakkımızda",
     services: "Hizmetler",
     team: "Ekip",
     partners: "Ortaklar",
