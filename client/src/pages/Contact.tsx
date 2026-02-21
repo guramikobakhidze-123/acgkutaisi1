@@ -183,8 +183,9 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-[#020654]">{t("emailUs")}</h4>
                   <p className="text-slate-600 mt-1">
-                    {t("generalEmail")}: info@integra-international.net<br />
-                    {t("supportEmail")}: support@integra-international.net
+                    murmankobaxidze@gmail.com<br />
+                    temuri.gvetadze@gmail.com<br />
+                    guramikobakhidze@gmail.com
                   </p>
                 </div>
               </div>
