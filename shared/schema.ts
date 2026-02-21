@@ -22,6 +22,7 @@ export const teamMembers = pgTable("team_members", {
   role: jsonb("role").notNull(),
   bio: jsonb("bio").notNull(),
   imageUrl: text("image_url").notNull(),
+  email: text("email"),
   linkedinUrl: text("linkedin_url"),
 });
 

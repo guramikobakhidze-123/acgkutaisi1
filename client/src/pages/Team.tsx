@@ -46,9 +46,11 @@ export default function Team() {
                           <Linkedin className="h-5 w-5" />
                         </a>
                       )}
-                      <a href={`mailto:contact@integra-international.net`} className="bg-white/20 hover:bg-[#4F8FE2] text-white p-2 rounded-full backdrop-blur-sm transition-colors">
-                        <Mail className="h-5 w-5" />
-                      </a>
+                      {member.email && (
+                        <a href={`mailto:${member.email}`} className="bg-white/20 hover:bg-[#4F8FE2] text-white p-2 rounded-full backdrop-blur-sm transition-colors">
+                          <Mail className="h-5 w-5" />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
