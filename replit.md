@@ -71,3 +71,11 @@ Content from the database uses JSONB fields; static UI text uses a translations 
 ### Development Tools
 - Replit-specific Vite plugins for dev banner and error overlay
 - TypeScript with strict mode enabled
+
+## Pending Features
+
+### Email Sending from Contact Form
+- Contact form submissions currently save to database but do NOT send emails
+- Target email addresses: murmankobaxidze@gmail.com, temuri.gvetadze@gmail.com, guramikobakhidze@gmail.com
+- User dismissed SendGrid integration; needs alternative setup (e.g., Gmail SMTP with App Password or Resend)
+- Revisit when user is ready to configure email credentials
