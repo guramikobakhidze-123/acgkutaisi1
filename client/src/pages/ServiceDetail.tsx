@@ -64,24 +64,6 @@ export default function ServiceDetail() {
               {getText(service.fullContent)}
             </p>
             
-            <h3 className="text-2xl font-serif font-bold text-[#020654] mb-4">{t("whyChooseUs")}</h3>
-            <p className="text-slate-600 mb-6">
-              {t("trustDescription")}
-            </p>
-
-            <h3 className="text-2xl font-serif font-bold text-[#020654] mb-4">{t("ourExpertise")}</h3>
-            <ul className="space-y-4 not-prose">
-              {[
-                t("strategicInsight"),
-                t("globalCompliance"),
-                t("riskMitigation"),
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-3 text-slate-600">
-                  <CheckCircle2 className="h-6 w-6 text-[#4F8FE2] shrink-0" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
 
