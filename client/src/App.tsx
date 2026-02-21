@@ -15,11 +15,13 @@ import Consulting from "@/pages/Consulting";
 import AuditAssurance from "@/pages/AuditAssurance";
 import FinancialServices from "@/pages/FinancialServices";
 import BlockchainWeb3 from "@/pages/BlockchainWeb3";
+import About from "@/pages/About";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/about" component={About} />
       <Route path="/services" component={Services} />
       <Route path="/services/audit-assurance" component={AuditAssurance} />
       <Route path="/services/financial-services" component={FinancialServices} />
