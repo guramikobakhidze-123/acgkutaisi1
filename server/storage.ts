@@ -37,6 +37,7 @@ export class DatabaseStorage implements IStorage {
       'consulting-services',
       'tax-disputes-consulting',
       'blockchain-web3',
+      'accounting-legislation',
     ];
     return allServices.sort((a, b) => {
       const ai = order.indexOf(a.slug);
