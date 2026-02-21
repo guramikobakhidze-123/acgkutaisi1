@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { useServices } from "@/hooks/use-content";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { ArrowRight, Briefcase, Calculator, TrendingUp, Search, ShieldCheck, Users, FileText, Scale } from "lucide-react";
+import { ArrowRight, Briefcase, Calculator, TrendingUp, Search, ShieldCheck, Users, FileText, Scale, Globe } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Services() {
@@ -20,6 +20,7 @@ export default function Services() {
       Users: Users,
       FileText: FileText,
       Scale: Scale,
+      Globe: Globe,
     };
     const Icon = icons[iconName] || Briefcase;
     return <Icon className="h-8 w-8 text-[#4F8FE2]" />;
