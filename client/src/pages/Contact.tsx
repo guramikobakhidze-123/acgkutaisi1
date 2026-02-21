@@ -171,8 +171,7 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-[#020654]">{t("headquarters")}</h4>
                   <p className="text-slate-600 mt-1">
-                    1200 Financial District Blvd, Suite 400<br />
-                    New York, NY 10005, USA
+                    {t("officeAddress")}
                   </p>
                 </div>
               </div>
