@@ -134,6 +134,9 @@ export function Navbar() {
             ))}
           </div>
           <LanguageSwitcher />
+          <Link href="/contact" className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground" data-testid="link-nav-contacts">
+            {t("contacts")}
+          </Link>
           <Link href="/contact">
             <Button size="lg" className="rounded-full px-8 shadow-lg shadow-primary/20 hover:shadow-primary/30" data-testid="button-cta-consultation">
               {t("getConsultation")}
@@ -215,6 +218,18 @@ export function Navbar() {
                   )}
                 >
                   {t("insights")}
+                </Link>
+                <Link
+                  href="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className={cn(
+                    "text-lg font-medium transition-colors hover:text-primary",
+                    isActive("/contact")
+                      ? "text-primary font-semibold"
+                      : "text-muted-foreground"
+                  )}
+                >
+                  {t("contacts")}
                 </Link>
                 <Link href="/contact" onClick={() => setIsOpen(false)}>
                   <Button className="w-full mt-4" size="lg">{t("getConsultation")}</Button>
