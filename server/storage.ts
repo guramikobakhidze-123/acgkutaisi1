@@ -26,7 +26,23 @@ export interface IStorage {
 
 export class DatabaseStorage implements IStorage {
   async getServices(): Promise<Service[]> {
-    return await db.select().from(services);
+    const allServices = await db.select().from(services);
+    const order = [
+      'audit-assurance',
+      'financial-services',
+      'loan-purpose-verification',
+      'consulting',
+      'legal-services',
+      'property-valuation',
+      'consulting-services',
+      'tax-disputes-consulting',
+      'blockchain-web3',
+    ];
+    return allServices.sort((a, b) => {
+      const ai = order.indexOf(a.slug);
+      const bi = order.indexOf(b.slug);
+      return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+    });
   }
 
   async getServiceBySlug(slug: string): Promise<Service | undefined> {
