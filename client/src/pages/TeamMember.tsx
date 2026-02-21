@@ -64,9 +64,22 @@ export default function TeamMember() {
               {getText(member.role)}
             </p>
 
-            <p className="text-slate-600 leading-relaxed mb-8 text-lg" data-testid="text-member-bio">
-              {getText(member.bio)}
-            </p>
+            <div className="text-slate-600 leading-relaxed mb-8 space-y-1" data-testid="text-member-bio">
+              {getText(member.bio).split("\n").map((line, i) => (
+                <p key={i} className={line.startsWith("-") ? "pl-4" : line === "" ? "h-2" : "font-semibold text-[#020654] mt-4 first:mt-0"}>
+                  {line.startsWith("-") ? (
+                    <span className="text-slate-600 font-normal">{line}</span>
+                  ) : line.includes(":") && !line.startsWith("-") ? (
+                    <>
+                      <span className="font-semibold text-[#020654]">{line.split(":")[0]}:</span>
+                      <span className="font-normal text-slate-600">{line.substring(line.indexOf(":") + 1)}</span>
+                    </>
+                  ) : (
+                    line
+                  )}
+                </p>
+              ))}
+            </div>
 
             {member.email && (
               <div className="flex items-center gap-3 mb-4">
