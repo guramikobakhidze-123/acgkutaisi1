@@ -3,13 +3,17 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowRight, Shield, Briefcase, Globe } from "lucide-react";
-import { useServices } from "@/hooks/use-content";
+import { ArrowRight, Shield, Briefcase, ShieldCheck, TrendingUp } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Home() {
-  const { data: services, isLoading } = useServices();
-  const { t, getText } = useLanguage();
+  const { t } = useLanguage();
+
+  const mainServices = [
+    { icon: ShieldCheck, titleKey: "auditAssurance", descKey: "auditDescription", href: "/services/audit-assurance" },
+    { icon: TrendingUp, titleKey: "financialServices", descKey: "financialDescription", href: "/services/financial-services" },
+    { icon: Briefcase, titleKey: "consultingServices", descKey: "consultingDescription", href: "/services/consulting" },
+  ];
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -112,16 +116,14 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {isLoading ? (
-              [1, 2, 3].map(i => <div key={i} className="h-80 bg-slate-200 rounded-xl animate-pulse" />)
-            ) : services?.slice(0, 3).map((service) => (
-              <Link key={service.id} href={`/services/${service.slug}`}>
-                <div className="group h-full bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 cursor-pointer" data-testid={`card-service-${service.id}`}>
+            {mainServices.map((service, index) => (
+              <Link key={index} href={service.href}>
+                <div className="group h-full bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 cursor-pointer" data-testid={`card-service-${index}`}>
                   <div className="h-14 w-14 bg-[#4F8FE2]/10 rounded-xl flex items-center justify-center mb-8 group-hover:bg-[#020654] transition-colors">
-                    <Briefcase className="h-7 w-7 text-[#4F8FE2] group-hover:text-white transition-colors" />
+                    <service.icon className="h-7 w-7 text-[#4F8FE2] group-hover:text-white transition-colors" />
                   </div>
-                  <h4 className="text-2xl font-serif font-bold mb-4 text-[#020654]">{getText(service.title)}</h4>
-                  <p className="text-slate-500 leading-relaxed mb-8">{getText(service.description)}</p>
+                  <h4 className="text-2xl font-serif font-bold mb-4 text-[#020654]">{t(service.titleKey as any)}</h4>
+                  <p className="text-slate-500 leading-relaxed mb-8">{t(service.descKey as any)}</p>
                   <div className="flex items-center text-[#4F8FE2] font-medium group-hover:translate-x-2 transition-transform">
                     {t("learnMore")} <ArrowRight className="ml-2 h-4 w-4" />
                   </div>
