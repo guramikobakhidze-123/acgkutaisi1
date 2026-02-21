@@ -29,6 +29,12 @@ export function Navbar() {
   const serviceItems = [
     { href: "/services/audit-assurance", label: t("auditAssurance") },
     { href: "/services/financial-services", label: t("financialServices") },
+    { href: "/services/consulting", label: t("consultingServices") },
+    { href: "/services/legal-services", label: t("legalServices") },
+    { href: "/services/property-valuation", label: t("propertyValuation") },
+    { href: "/services/consulting-services", label: t("consulting") },
+    { href: "/services/tax-disputes-consulting", label: t("taxDisputesConsulting") },
+    { href: "/services/blockchain-web3", label: t("blockchainWeb3") },
   ];
 
   const isActive = (path: string) => location === path;
