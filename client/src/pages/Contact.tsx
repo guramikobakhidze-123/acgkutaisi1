@@ -197,8 +197,9 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-[#020654]">{t("callUs")}</h4>
                   <p className="text-slate-600 mt-1">
-                    {t("mainPhone")}: +1 (212) 555-0123<br />
-                    {t("faxPhone")}: +1 (212) 555-0124
+                    +995 597 69 69 54<br />
+                    +995 555 11 99 65<br />
+                    +995 577 12 34 01
                   </p>
                 </div>
               </div>
