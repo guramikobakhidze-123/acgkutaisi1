@@ -1,8 +1,8 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { useTeam } from "@/hooks/use-content";
-import { Linkedin, Mail } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "wouter";
 
 export default function Team() {
   const { data: team, isLoading } = useTeam();
@@ -30,10 +30,20 @@ export default function Team() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {team?.map((member) => (
-              <div key={member.id} className="text-center" data-testid={`card-team-${member.id}`}>
-                <h3 className="text-2xl font-serif font-bold text-[#020654]">{getText(member.name)}</h3>
-                <p className="text-[#4F8FE2] font-medium mt-2 tracking-wider text-sm">{getText(member.role)}</p>
-              </div>
+              <Link key={member.id} href={`/team/${member.id}`} data-testid={`card-team-${member.id}`}>
+                <div className="group cursor-pointer text-center">
+                  <div className="relative overflow-hidden rounded-2xl mb-6 shadow-md aspect-[3/4] mx-auto max-w-xs">
+                    <img
+                      src={member.imageUrl}
+                      alt={getText(member.name)}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#020654]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <h3 className="text-2xl font-serif font-bold text-[#020654] group-hover:text-[#4F8FE2] transition-colors">{getText(member.name)}</h3>
+                  <p className="text-[#4F8FE2] font-medium mt-2 tracking-wider text-sm">{getText(member.role)}</p>
+                </div>
+              </Link>
             ))}
           </div>
         )}

@@ -16,6 +16,7 @@ import AuditAssurance from "@/pages/AuditAssurance";
 import FinancialServices from "@/pages/FinancialServices";
 import BlockchainWeb3 from "@/pages/BlockchainWeb3";
 import About from "@/pages/About";
+import TeamMember from "@/pages/TeamMember";
 
 function Router() {
   return (
@@ -29,6 +30,7 @@ function Router() {
       <Route path="/services/blockchain-web3" component={BlockchainWeb3} />
       <Route path="/services/:slug" component={ServiceDetail} />
       <Route path="/team" component={Team} />
+      <Route path="/team/:id" component={TeamMember} />
       <Route path="/insights" component={Insights} />
       <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
