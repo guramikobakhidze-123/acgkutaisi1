@@ -12,6 +12,7 @@ import { MapPin, Mail, Phone, Clock } from "lucide-react";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { z } from "zod";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const { toast } = useToast();
@@ -53,18 +54,28 @@ export default function Contact() {
       <Navbar />
 
       <div className="bg-[#020654] text-white py-24">
-        <div className="container text-center max-w-3xl">
+        <motion.div
+          className="container text-center max-w-3xl"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
           <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6" data-testid="text-contact-title">{t("contactUs")}</h1>
           <p className="text-xl text-slate-300 leading-relaxed">
             {t("contactDescription")}
           </p>
-        </div>
+        </motion.div>
       </div>
 
       <div className="container py-24 -mt-16 bg-white rounded-t-3xl shadow-xl border border-slate-100">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7 }}
+          >
             <h2 className="text-2xl font-serif font-bold text-[#020654] mb-2">{t("sendMessage")}</h2>
             <p className="text-slate-500 mb-8">{t("formDescription")}</p>
             
@@ -158,9 +169,15 @@ export default function Contact() {
                 </Button>
               </form>
             </Form>
-          </div>
+          </motion.div>
 
-          <div className="bg-[#A1C9F5]/20 p-10 rounded-2xl border border-[#4F8FE2]/20">
+          <motion.div
+            className="bg-[#A1C9F5]/20 p-10 rounded-2xl border border-[#4F8FE2]/20"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7 }}
+          >
             <h3 className="text-xl font-serif font-bold text-[#020654] mb-8">{t("contactInformation")}</h3>
             
             <div className="space-y-8">
@@ -221,7 +238,7 @@ export default function Contact() {
             <div className="mt-10 h-48 bg-[#020654]/10 rounded-xl w-full flex items-center justify-center">
               <span className="text-[#020654]/50 font-medium">{t("mapPlaceholder")}</span>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
