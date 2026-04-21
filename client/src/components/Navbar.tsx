@@ -48,13 +48,12 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center gap-3" data-testid="link-logo">
             <img 
-              src="/assets/Integra_International_Primary_White_1769239697208.jpg" 
-              alt="Integra International" 
-              className="h-10 w-auto"
+              src="/acg-brand-logo.png" 
+              alt="ACG Consulting" 
+              className="h-12 w-auto"
             />
             <div className="hidden sm:block border-l border-slate-300 pl-3">
-              <span className="text-sm font-semibold text-[#020654]">ACG</span>
-              <span className="block text-xs text-muted-foreground">ქუთაისის ფილიალი</span>
+              <span className="text-xs text-muted-foreground">ქუთაისის ფილიალი</span>
             </div>
           </Link>
         </div>
