@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "smlbNDYP0ygT6FDGoQnjQ"
+uri = "file://acg-website-code.tar.gz"
+type = "unspecified"
+title = "ACG Website Source Code"
