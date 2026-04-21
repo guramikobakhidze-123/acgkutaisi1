@@ -73,26 +73,34 @@ export function Footer() {
           <h3 className="font-serif font-semibold text-lg mb-4 text-white">{t("contactFooter")}</h3>
           <ul className="space-y-4 text-sm text-slate-400">
             <li className="flex items-start gap-3">
-              <MapPin className="h-5 w-5 text-[#4F8FE2] shrink-0" />
+              <MapPin className="h-5 w-5 text-[#4F8FE2] shrink-0 mt-0.5" />
               <span>
-                1200 Financial District Blvd,<br />
-                Suite 400, New York, NY 10005
+                <span className="block text-white font-medium mb-0.5">{t("headquarters")}</span>
+                {t("officeAddress")}
               </span>
             </li>
-            <li className="flex items-center gap-3">
-              <Phone className="h-5 w-5 text-[#4F8FE2] shrink-0" />
-              <span>+1 (212) 555-0123</span>
+            <li className="flex items-start gap-3">
+              <Phone className="h-5 w-5 text-[#4F8FE2] shrink-0 mt-0.5" />
+              <span>
+                +995 597 69 69 54<br />
+                +995 555 11 99 65<br />
+                +995 577 12 34 01
+              </span>
             </li>
-            <li className="flex items-center gap-3">
-              <Mail className="h-5 w-5 text-[#4F8FE2] shrink-0" />
-              <span>contact@integra-international.net</span>
+            <li className="flex items-start gap-3">
+              <Mail className="h-5 w-5 text-[#4F8FE2] shrink-0 mt-0.5" />
+              <span>
+                murmankobaxidze@gmail.com<br />
+                temuri.gvetadze@gmail.com<br />
+                guramikobakhidze@gmail.com
+              </span>
             </li>
           </ul>
         </div>
       </div>
       
       <div className="container mt-16 pt-8 border-t border-slate-700 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
-        <p>&copy; {new Date().getFullYear()} Integra International. {t("allRightsReserved")}.</p>
+        <p>&copy; {new Date().getFullYear()} ACG — Audit & Consulting Group. {t("allRightsReserved")}.</p>
         <div className="flex gap-6 mt-4 md:mt-0">
           <a href="#" className="hover:text-slate-300">{t("privacyPolicy")}</a>
           <a href="#" className="hover:text-slate-300">{t("termsOfService")}</a>
