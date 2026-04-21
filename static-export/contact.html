@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>კონტაქტი | ACG Kutaisi</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><div class="nav-logo-text"><strong>ACG</strong><span>ქუთაისის ფილიალი</span></div></a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="home">მთავარი</a>
+      <div class="dropdown"><span class="dropdown-trigger" data-i18n="services">სერვისები</span>
+        <div class="dropdown-menu"><a href="services.html" data-i18n="viewAllServices">ყველა სერვისი</a><a href="services.html#audit" data-i18n="auditAssurance">აუდიტი</a><a href="services.html#financial" data-i18n="financialServices">ფინანსური</a><a href="services.html#consulting" data-i18n="consulting">კონსულტაცია</a></div>
+      </div>
+      <a href="about.html" data-i18n="about">ჩვენს შესახებ</a>
+      <a href="team.html" data-i18n="team">გუნდი</a>
+      <a href="contact.html" class="active" data-i18n="contacts">კონტაქტები</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switcher"><button class="lang-btn" data-lang="ka">KA</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="tr">TR</button></div>
+      <a href="contact.html" class="btn btn-primary" data-i18n="getConsultation">მიიღეთ კონსულტაცია</a>
+    </div>
+    <button class="hamburger" id="menu-toggle"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu hidden" id="mobile-menu">
+    <a href="index.html" data-i18n="home">მთავარი</a><a href="services.html" data-i18n="services">სერვისები</a><a href="about.html" data-i18n="about">ჩვენს შესახებ</a><a href="team.html" data-i18n="team">გუნდი</a><a href="contact.html" data-i18n="contacts">კონტაქტები</a>
+    <div class="lang-switcher" style="margin-top:12px;display:flex;"><button class="lang-btn" data-lang="ka">KA</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="tr">TR</button></div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <span class="eyebrow" style="color:#a1c9f5;">Contact</span>
+    <h1 data-i18n="contactUs">დაგვიკავშირდით</h1>
+    <p data-i18n="contactDesc">გაქვთ კითხვა? ჩვენ მზად ვართ დაგეხმაროთ.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-form-card">
+        <h3 style="font-size:1.4rem;font-weight:800;color:var(--primary);margin-bottom:8px;" data-i18n="getInTouch">დაგვიკავშირდით</h3>
+        <p style="color:var(--muted);font-size:14px;margin-bottom:28px;" data-i18n="contactDesc">გაქვთ კითხვა? ჩვენ მზად ვართ.</p>
+        <div class="success-msg" id="form-success" data-i18n="formSuccess">შეტყობინება გაიგზავნა! მადლობა.</div>
+        <form id="contact-form">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div class="form-group"><label data-i18n="yourName">სახელი</label><input type="text" data-i18n-placeholder="yourName" placeholder="სახელი" required /></div>
+            <div class="form-group"><label data-i18n="yourEmail">ელ-ფოსტა</label><input type="email" data-i18n-placeholder="yourEmail" placeholder="ელ-ფოსტა" required /></div>
+          </div>
+          <div class="form-group"><label data-i18n="yourPhone">ტელეფონი</label><input type="tel" placeholder="+995 5XX XX XX XX" /></div>
+          <div class="form-group">
+            <label data-i18n="selectService">სერვისი</label>
+            <select>
+              <option value="" data-i18n="selectService">სერვისი</option>
+              <option value="audit">აუდიტი და დადასტურება</option>
+              <option value="financial">ფინანსური სერვისები</option>
+              <option value="consulting">საკონსულტაციო სერვისები</option>
+              <option value="legal">სამართლებრივი სერვისები</option>
+              <option value="property">ქონების შეფასება</option>
+              <option value="tax">საგადასახადო დავები</option>
+              <option value="accounting">ბუღალტრია</option>
+            </select>
+          </div>
+          <div class="form-group"><label data-i18n="yourMessage">შეტყობინება</label><textarea data-i18n-placeholder="messagePlaceholder" placeholder="თქვენი შეტყობინება..." rows="5" required></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:14px;" data-i18n="sendMessage">გაგზავნა</button>
+        </form>
+      </div>
+
+      <div class="contact-info-card">
+        <h3 style="font-size:1.2rem;font-weight:800;color:var(--primary);margin-bottom:32px;">საკონტაქტო ინფორმაცია</h3>
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div><h4 data-i18n="headquarters">მთავარი ოფისი</h4><p data-i18n="officeAddress">წერეთლის 12, ქუთაისი, საქართველო</p></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div><h4 data-i18n="callUs">დაგვირეკეთ</h4><p>+995 597 69 69 54<br />+995 555 11 99 65<br />+995 577 12 34 01</p></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">✉️</div>
+          <div><h4 data-i18n="emailUs">მოგვწერეთ</h4><p>murmankobaxidze@gmail.com<br />temuri.gvetadze@gmail.com<br />guramikobakhidze@gmail.com</p></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">🕐</div>
+          <div><h4 data-i18n="officeHours">სამუშაო საათები</h4><p data-i18n="mondayFriday">ორშაბათი-პარასკევი: 9:00-18:00</p><p data-i18n="saturdaySunday">შაბათ-კვირა: დასვენება</p></div>
+        </div>
+        <div style="margin-top:32px;background:rgba(2,6,84,.08);border-radius:12px;padding:16px;text-align:center;">
+          <p style="font-size:13px;color:var(--muted);">📍 წერეთლის ქ. 12, ქუთაისი</p>
+          <p style="font-size:13px;color:var(--muted);margin-top:4px;">Kutaisi, Georgia</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo"><div class="footer-logo-text"><strong>ACG — Audit & Consulting Group</strong><span>ქუთაისის ფილიალი · Integra International</span></div></div><p style="font-size:14px;line-height:1.7;" data-i18n="footerDesc">Integra International-ის წევრი ფირმა.</p></div>
+      <div><h4 data-i18n="company">კომპანია</h4><ul><li><a href="index.html" data-i18n="home">მთავარი</a></li><li><a href="about.html" data-i18n="about">ჩვენს შესახებ</a></li><li><a href="services.html" data-i18n="services">სერვისები</a></li><li><a href="team.html" data-i18n="team">გუნდი</a></li><li><a href="contact.html" data-i18n="contact">კონტაქტი</a></li></ul></div>
+      <div><h4 data-i18n="services">სერვისები</h4><ul><li><a href="services.html#audit" data-i18n="auditAssurance">აუდიტი</a></li><li><a href="services.html#financial" data-i18n="financialServices">ფინანსური</a></li><li><a href="services.html#consulting" data-i18n="consulting">კონსულტაცია</a></li></ul></div>
+      <div><h4 data-i18n="contacts">კონტაქტები</h4>
+        <div class="footer-contact-item"><span class="icon">📍</span><div><strong data-i18n="headquarters">მთავარი ოფისი</strong><span data-i18n="officeAddress">წერეთლის 12, ქუთაისი, საქართველო</span></div></div>
+        <div class="footer-contact-item"><span class="icon">📞</span><div>+995 597 69 69 54<br />+995 555 11 99 65<br />+995 577 12 34 01</div></div>
+        <div class="footer-contact-item"><span class="icon">✉️</span><div>murmankobaxidze@gmail.com<br />temuri.gvetadze@gmail.com</div></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <script>document.write(new Date().getFullYear())</script> ACG — Audit & Consulting Group. <span data-i18n="allRightsReserved">ყველა უფლება დაცულია</span>.</span>
+      <div class="footer-bottom-links"><a href="#" data-i18n="privacyPolicy">კონფიდენციალობის პოლიტიკა</a><a href="#" data-i18n="termsOfService">მომსახურების პირობები</a></div>
+    </div>
+  </div>
+</footer>
+<script src="js/translations.js"></script><script src="js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+    const msg = document.getElementById('form-success');
+    if (form) form.addEventListener('submit', e => {
+      e.preventDefault(); msg.style.display = 'block'; form.reset();
+      setTimeout(() => msg.style.display = 'none', 4000);
+    });
+  });
+</script>
+</body></html>

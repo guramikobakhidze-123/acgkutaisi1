@@ -6,3 +6,9 @@ id = "smlbNDYP0ygT6FDGoQnjQ"
 uri = "file://acg-website-code.tar.gz"
 type = "unspecified"
 title = "ACG Website Source Code"
+
+[[outputs]]
+id = "08Pipv21qKPotoUoXS3Zb"
+uri = "file://acg-static-website.tar.gz"
+type = "unspecified"
+title = "ACG Website — HTML/CSS/JS (Static)"
