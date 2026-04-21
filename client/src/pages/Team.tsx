@@ -3,20 +3,6 @@ import { Footer } from "@/components/Footer";
 import { useTeam } from "@/hooks/use-content";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "wouter";
-import { motion } from "framer-motion";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0 }
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.18 }
-  }
-};
 
 export default function Team() {
   const { data: team, isLoading } = useTeam();
@@ -27,35 +13,13 @@ export default function Team() {
       <Navbar />
 
       <div className="bg-[#A1C9F5]/20 py-24">
-        <motion.div
-          className="container text-center max-w-3xl"
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
-        >
-          <motion.h2
-            className="text-sm font-bold text-[#4F8FE2] tracking-widest uppercase mb-3"
-            variants={fadeUp}
-            transition={{ duration: 0.6 }}
-          >
-            {t("ourPeople")}
-          </motion.h2>
-          <motion.h1
-            className="text-4xl md:text-6xl font-serif font-bold mb-6 text-[#020654]"
-            data-testid="text-team-title"
-            variants={fadeUp}
-            transition={{ duration: 0.6 }}
-          >
-            {t("meetThePartners")}
-          </motion.h1>
-          <motion.p
-            className="text-xl text-slate-600 leading-relaxed"
-            variants={fadeUp}
-            transition={{ duration: 0.6 }}
-          >
+        <div className="container text-center max-w-3xl">
+          <h2 className="text-sm font-bold text-[#4F8FE2] tracking-widest uppercase mb-3">{t("ourPeople")}</h2>
+          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-[#020654]" data-testid="text-team-title">{t("meetThePartners")}</h1>
+          <p className="text-xl text-slate-600 leading-relaxed">
             {t("teamDescription")}
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
       </div>
 
       <div className="container py-24">
@@ -64,36 +28,24 @@ export default function Team() {
             {[1, 2, 3].map(i => <div key={i} className="h-96 bg-slate-100 rounded-xl animate-pulse" />)}
           </div>
         ) : (
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            variants={staggerContainer}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {team?.map((member) => (
-              <motion.div
-                key={member.id}
-                variants={fadeUp}
-                transition={{ duration: 0.65 }}
-              >
-                <Link href={`/team/${member.id}`} data-testid={`card-team-${member.id}`}>
-                  <div className="group cursor-pointer text-center">
-                    <div className="relative overflow-hidden rounded-2xl mb-6 shadow-md aspect-[3/4] mx-auto max-w-xs">
-                      <img
-                        src={member.imageUrl}
-                        alt={getText(member.name)}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#020654]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </div>
-                    <h3 className="text-2xl font-serif font-bold text-[#020654] group-hover:text-[#4F8FE2] transition-colors">{getText(member.name)}</h3>
-                    <p className="text-[#4F8FE2] font-medium mt-2 tracking-wider text-sm">{getText(member.role)}</p>
+              <Link key={member.id} href={`/team/${member.id}`} data-testid={`card-team-${member.id}`}>
+                <div className="group cursor-pointer text-center">
+                  <div className="relative overflow-hidden rounded-2xl mb-6 shadow-md aspect-[3/4] mx-auto max-w-xs">
+                    <img
+                      src={member.imageUrl}
+                      alt={getText(member.name)}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#020654]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
-                </Link>
-              </motion.div>
+                  <h3 className="text-2xl font-serif font-bold text-[#020654] group-hover:text-[#4F8FE2] transition-colors">{getText(member.name)}</h3>
+                  <p className="text-[#4F8FE2] font-medium mt-2 tracking-wider text-sm">{getText(member.role)}</p>
+                </div>
+              </Link>
             ))}
-          </motion.div>
+          </div>
         )}
       </div>
 

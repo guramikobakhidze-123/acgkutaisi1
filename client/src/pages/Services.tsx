@@ -5,20 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight, Briefcase, Calculator, TrendingUp, Search, ShieldCheck, Users, FileText, Scale, Globe } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { motion } from "framer-motion";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0 }
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.12 }
-  }
-};
 
 export default function Services() {
   const { data: services, isLoading } = useServices();
@@ -45,53 +31,25 @@ export default function Services() {
       <Navbar />
 
       <div className="bg-[#020654] text-white py-24">
-        <motion.div
-          className="container text-center max-w-3xl"
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
-        >
-          <motion.h1
-            className="text-4xl md:text-6xl font-serif font-bold mb-6"
-            data-testid="text-services-title"
-            variants={fadeUp}
-            transition={{ duration: 0.7 }}
-          >
-            {t("ourServices")}
-          </motion.h1>
-          <motion.p
-            className="text-xl text-slate-300 leading-relaxed"
-            variants={fadeUp}
-            transition={{ duration: 0.7 }}
-          >
+        <div className="container text-center max-w-3xl">
+          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6" data-testid="text-services-title">{t("ourServices")}</h1>
+          <p className="text-xl text-slate-300 leading-relaxed">
             {t("servicesDescription")}
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
       </div>
 
       <div className="container py-24 -mt-12">
         {isLoading ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3, 4, 5, 6].map(i => (
-              <div key={i} className="h-96 bg-white rounded-2xl shadow-sm animate-pulse" />
-            ))}
-          </div>
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+             {[1, 2, 3, 4, 5, 6].map(i => (
+               <div key={i} className="h-96 bg-white rounded-2xl shadow-sm animate-pulse" />
+             ))}
+           </div>
         ) : (
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
-            variants={staggerContainer}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services?.map((service) => (
-              <motion.div
-                key={service.id}
-                variants={fadeUp}
-                transition={{ duration: 0.6 }}
-                className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col"
-                data-testid={`card-service-${service.id}`}
-              >
+              <div key={service.id} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col" data-testid={`card-service-${service.id}`}>
                 <div className="h-16 w-16 bg-[#4F8FE2]/10 rounded-2xl flex items-center justify-center mb-8">
                   {getIcon(service.icon)}
                 </div>
@@ -104,9 +62,9 @@ export default function Services() {
                     </Button>
                   </Link>
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         )}
       </div>
 
