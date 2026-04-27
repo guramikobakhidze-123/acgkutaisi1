@@ -14,53 +14,52 @@ export default function About() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#020654] flex flex-col">
+    <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
 
-      <div className="text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[#4F8FE2]/5 pattern-grid-lg opacity-10" />
-        <div className="container relative z-10 text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6" data-testid="text-about-title">
+      <div className="bg-[#A1C9F5]/20 py-24">
+        <div className="container text-center max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-[#020654]" data-testid="text-about-title">
             {t("aboutTitle")}
           </h1>
-          <p className="text-lg text-slate-300 leading-relaxed" data-testid="text-about-subtitle">
+          <p className="text-xl text-slate-600 leading-relaxed" data-testid="text-about-subtitle">
             {t("aboutSubtitle")}
           </p>
         </div>
       </div>
 
-      <div className="container pb-16">
-        <div className="bg-[#0a1045]/80 backdrop-blur-sm rounded-2xl p-8 md:p-12 text-white border border-[#4F8FE2]/10">
+      <div className="container py-16">
+        <div className="bg-white rounded-2xl p-8 md:p-12 border border-slate-100 shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-2xl md:text-3xl font-serif font-bold mb-6" data-testid="text-who-we-are">
+              <h2 className="text-2xl md:text-3xl font-serif font-bold mb-6 text-[#020654]" data-testid="text-who-we-are">
                 {t("aboutWhoWeAre")}
               </h2>
-              <p className="text-slate-300 leading-relaxed mb-8" data-testid="text-who-we-are-desc">
+              <p className="text-slate-600 leading-relaxed mb-8" data-testid="text-who-we-are-desc">
                 {t("aboutWhoWeAreDesc")}
               </p>
 
               <div className="flex flex-wrap gap-4 mb-8">
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3 border border-white/10">
+                <div className="bg-slate-50 rounded-lg px-6 py-3 border border-slate-200">
                   <img 
                     src="/assets/Integra_International_Primary_White_1769239697208.jpg" 
                     alt="Integra International" 
                     className="h-10 w-auto"
                   />
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3 border border-white/10 flex items-center">
-                  <span className="text-sm font-bold text-white">TPA Global</span>
+                <div className="bg-slate-50 rounded-lg px-6 py-3 border border-slate-200 flex items-center">
+                  <span className="text-sm font-bold text-[#020654]">TPA Global</span>
                 </div>
               </div>
 
-              <p className="text-slate-300 leading-relaxed mb-8" data-testid="text-integra-desc">
+              <p className="text-slate-600 leading-relaxed mb-8" data-testid="text-integra-desc">
                 {t("aboutIntegraDesc")}
               </p>
 
-              <h3 className="text-xl font-serif font-bold mb-4 text-[#6db3f2]" data-testid="text-mission-title">
+              <h3 className="text-xl font-serif font-bold mb-4 text-[#4F8FE2]" data-testid="text-mission-title">
                 {t("aboutMission")}
               </h3>
-              <p className="text-slate-300 leading-relaxed" data-testid="text-mission-desc">
+              <p className="text-slate-600 leading-relaxed" data-testid="text-mission-desc">
                 {t("aboutMissionDesc")}
               </p>
             </div>
@@ -73,46 +72,46 @@ export default function About() {
                   className="w-full h-64 object-cover rounded-2xl"
                 />
               </div>
-              <div className="bg-[#4F8FE2]/10 border border-[#4F8FE2]/20 rounded-2xl p-6 flex items-center gap-4">
+              <div className="bg-[#A1C9F5]/20 border border-[#4F8FE2]/20 rounded-2xl p-6 flex items-center gap-4">
                 <span className="text-[#4F8FE2] text-2xl">→</span>
-                <p className="text-white font-serif font-bold text-lg">{t("aboutJoinSuccess")}</p>
+                <p className="text-[#020654] font-serif font-bold text-lg">{t("aboutJoinSuccess")}</p>
               </div>
-              <div className="rounded-2xl overflow-hidden bg-white/5 border border-white/10 p-6 flex items-center gap-4">
+              <div className="rounded-2xl overflow-hidden bg-slate-50 border border-slate-200 p-6 flex items-center gap-4">
                 <img 
                   src="/assets/Integra_International_Primary_White_1769239697208.jpg" 
                   alt="ACG Consulting" 
                   className="h-12 w-auto"
                 />
                 <div>
-                  <span className="text-white font-bold text-lg">ACG</span>
-                  <span className="block text-slate-400 text-sm">CONSULTING</span>
+                  <span className="text-[#020654] font-bold text-lg">ACG</span>
+                  <span className="block text-slate-500 text-sm">CONSULTING</span>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10">
-            <div className="bg-[#4F8FE2]/10 border border-[#4F8FE2]/20 rounded-2xl p-6">
+            <div className="bg-[#A1C9F5]/20 border border-[#4F8FE2]/20 rounded-2xl p-6">
               <Award className="h-8 w-8 text-[#4F8FE2] mb-3" />
-              <h4 className="text-white font-bold text-lg mb-2">{t("aboutExcellence")}</h4>
-              <p className="text-slate-400 text-sm">{t("aboutExcellenceDesc")}</p>
+              <h4 className="text-[#020654] font-bold text-lg mb-2">{t("aboutExcellence")}</h4>
+              <p className="text-slate-600 text-sm">{t("aboutExcellenceDesc")}</p>
             </div>
-            <div className="bg-[#4F8FE2]/10 border border-[#4F8FE2]/20 rounded-2xl p-6">
+            <div className="bg-[#A1C9F5]/20 border border-[#4F8FE2]/20 rounded-2xl p-6">
               <Users className="h-8 w-8 text-[#4F8FE2] mb-3" />
-              <h4 className="text-white font-bold text-lg mb-2">{t("aboutPartnership")}</h4>
-              <p className="text-slate-400 text-sm">{t("aboutPartnershipDesc")}</p>
+              <h4 className="text-[#020654] font-bold text-lg mb-2">{t("aboutPartnership")}</h4>
+              <p className="text-slate-600 text-sm">{t("aboutPartnershipDesc")}</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="border-t border-[#4F8FE2]/10 py-16">
+      <div className="border-t border-slate-100 py-16">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, i) => (
               <div key={i} className="space-y-2" data-testid={`about-stat-${i}`}>
                 <p className="text-4xl md:text-5xl font-serif font-bold text-[#4F8FE2]">{stat.value}</p>
-                <p className="text-sm text-slate-400 uppercase tracking-wide">{stat.label}</p>
+                <p className="text-sm text-slate-500 uppercase tracking-wide">{stat.label}</p>
               </div>
             ))}
           </div>
