@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactRequestSchema } from "@shared/schema";
 import { useToast } from "@/hooks/use-toast";
-import { MapPin, Mail, Phone, Clock } from "lucide-react";
+import { MapPin, Mail, Phone, Clock, Navigation } from "lucide-react";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { z } from "zod";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -229,6 +229,17 @@ export default function Contact() {
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
+            <a
+              href="https://maps.google.com/?q=42.26894299061211,42.703466069622884"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-open-maps"
+            >
+              <Button className="w-full mt-3 bg-[#020654] hover:bg-[#020654]/90 text-white gap-2">
+                <Navigation className="h-4 w-4" />
+                {t("openInMaps")}
+              </Button>
+            </a>
           </div>
         </div>
       </div>
