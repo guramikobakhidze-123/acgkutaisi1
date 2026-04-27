@@ -230,7 +230,7 @@ export default function Contact() {
               />
             </div>
             <a
-              href="https://maps.google.com/?q=42.26894299061211,42.703466069622884"
+              href="https://maps.google.com/?ftid=0x405c8d13fae83b8d:0x354d497d4a3130f6"
               target="_blank"
               rel="noopener noreferrer"
               data-testid="button-open-maps"
