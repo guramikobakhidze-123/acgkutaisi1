@@ -46,7 +46,7 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-20 items-center justify-between">
         <div className="flex items-center gap-2">
-          <Link href="/" className="flex items-center gap-3" data-testid="link-logo">
+          <a href="https://integra-international.net/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3" data-testid="link-logo">
             <img 
               src="/assets/Integra_International_Primary_White_1769239697208.jpg" 
               alt="Integra International" 
@@ -56,7 +56,7 @@ export function Navbar() {
               <span className="text-sm font-semibold text-[#020654]">ACG</span>
               <span className="block text-xs text-muted-foreground">ქუთაისის ფილიალი</span>
             </div>
-          </Link>
+          </a>
         </div>
 
         <div className="hidden md:flex items-center gap-8">
