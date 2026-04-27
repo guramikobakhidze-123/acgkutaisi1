@@ -30,19 +30,8 @@ export default function Team() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {team?.map((member) => (
-              <div
-                key={member.id}
-                className="cursor-pointer"
-                data-testid={`card-team-${member.id}`}
-                onClick={() => {
-                  if (member.linkedinUrl) {
-                    window.location.href = member.linkedinUrl;
-                  } else {
-                    window.location.href = `/team/${member.id}`;
-                  }
-                }}
-              >
-                <div className="group text-center">
+              <Link key={member.id} href={`/team/${member.id}`} data-testid={`card-team-${member.id}`}>
+                <div className="group cursor-pointer text-center">
                   <div className="relative overflow-hidden rounded-2xl mb-6 shadow-md aspect-[3/4] mx-auto max-w-xs">
                     <img
                       src={member.imageUrl}
@@ -54,7 +43,7 @@ export default function Team() {
                   <h3 className="text-2xl font-serif font-bold text-[#020654] group-hover:text-[#4F8FE2] transition-colors">{getText(member.name)}</h3>
                   <p className="text-[#4F8FE2] font-medium mt-2 tracking-wider text-sm">{getText(member.role)}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         )}
