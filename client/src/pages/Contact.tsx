@@ -218,8 +218,16 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="mt-10 h-48 bg-[#020654]/10 rounded-xl w-full flex items-center justify-center">
-              <span className="text-[#020654]/50 font-medium">{t("mapPlaceholder")}</span>
+            <div className="mt-10 rounded-xl overflow-hidden w-full">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d738.1121907419189!2d42.703466069622884!3d42.26894299061211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x405c8d13fae83b8d%3A0x354d497d4a3130f6!2sACG!5e0!3m2!1ska!2sge!4v1777274761798!5m2!1ska!2sge"
+                width="100%"
+                height="250"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
         </div>
