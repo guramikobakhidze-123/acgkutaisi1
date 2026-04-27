@@ -29,7 +29,7 @@ export default function Team() {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {team?.map((member) => {
+            {[...(team ?? [])].sort((a, b) => a.id - b.id).map((member) => {
               if (member.linkedinUrl) {
                 return (
                   <div key={member.id} className="text-center" data-testid={`card-team-${member.id}`}>
