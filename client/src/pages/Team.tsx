@@ -29,22 +29,49 @@ export default function Team() {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {team?.map((member) => (
-              <Link key={member.id} href={`/team/${member.id}`} data-testid={`card-team-${member.id}`}>
-                <div className="group cursor-pointer text-center">
-                  <div className="relative overflow-hidden rounded-2xl mb-6 shadow-md aspect-[3/4] mx-auto max-w-xs">
-                    <img
-                      src={member.imageUrl}
-                      alt={getText(member.name)}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#020654]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            {team?.map((member) => {
+              if (member.linkedinUrl) {
+                return (
+                  <div key={member.id} className="text-center" data-testid={`card-team-${member.id}`}>
+                    <div className="relative overflow-hidden rounded-2xl mb-6 shadow-md aspect-[3/4] mx-auto max-w-xs">
+                      <img
+                        src={member.imageUrl}
+                        alt={getText(member.name)}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 className="text-2xl font-serif font-bold text-[#020654]">{getText(member.name)}</h3>
+                    <p className="text-[#4F8FE2] font-medium mt-2 tracking-wider text-sm">{getText(member.role)}</p>
+                    <a
+                      href={member.linkedinUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-testid={`btn-portfolio-${member.id}`}
+                      className="inline-block mt-4 px-6 py-2 bg-[#020654] text-white text-sm font-semibold rounded-full hover:bg-[#4F8FE2] transition-colors"
+                    >
+                      {t("viewPortfolio")}
+                    </a>
                   </div>
-                  <h3 className="text-2xl font-serif font-bold text-[#020654] group-hover:text-[#4F8FE2] transition-colors">{getText(member.name)}</h3>
-                  <p className="text-[#4F8FE2] font-medium mt-2 tracking-wider text-sm">{getText(member.role)}</p>
-                </div>
-              </Link>
-            ))}
+                );
+              }
+
+              return (
+                <Link key={member.id} href={`/team/${member.id}`} data-testid={`card-team-${member.id}`}>
+                  <div className="group cursor-pointer text-center">
+                    <div className="relative overflow-hidden rounded-2xl mb-6 shadow-md aspect-[3/4] mx-auto max-w-xs">
+                      <img
+                        src={member.imageUrl}
+                        alt={getText(member.name)}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#020654]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                    <h3 className="text-2xl font-serif font-bold text-[#020654] group-hover:text-[#4F8FE2] transition-colors">{getText(member.name)}</h3>
+                    <p className="text-[#4F8FE2] font-medium mt-2 tracking-wider text-sm">{getText(member.role)}</p>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         )}
       </div>
