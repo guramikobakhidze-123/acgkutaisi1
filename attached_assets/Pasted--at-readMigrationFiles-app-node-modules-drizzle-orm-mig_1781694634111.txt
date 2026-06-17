@@ -1,0 +1,102 @@
+    at readMigrationFiles (/app/node_modules/drizzle-orm/migrator.cjs:41:11)
+    at Object.<anonymous> (/app/dist/index.cjs:67:74704)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at migrate (/app/node_modules/drizzle-orm/node-postgres/migrator.cjs:26:61)
+    at _m (/app/dist/index.cjs:67:73553)
+    at /app/dist/index.cjs:67:74360
+Node.js v18.20.5
+Starting Container
+npm warn config production Use `--omit=dev` instead.
+> rest-express@1.0.0 start
+> NODE_ENV=production node dist/index.cjs
+Error: Can't find meta/_journal.json file
+    at readMigrationFiles (/app/node_modules/drizzle-orm/migrator.cjs:41:11)
+    at _m (/app/dist/index.cjs:67:73553)
+    at migrate (/app/node_modules/drizzle-orm/node-postgres/migrator.cjs:26:61)
+    at /app/dist/index.cjs:67:74360
+    at _m (/app/dist/index.cjs:67:73553)
+node:internal/process/promises:288
+    at Object.<anonymous> (/app/dist/index.cjs:67:74704)
+    at /app/dist/index.cjs:67:74360
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+Running database migrations...
+Failed to run database migrations: Error: Can't find meta/_journal.json file
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at readMigrationFiles (/app/node_modules/drizzle-orm/migrator.cjs:41:11)
+    at migrate (/app/node_modules/drizzle-orm/node-postgres/migrator.cjs:26:61)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+Node.js v18.20.5
+    at Object.<anonymous> (/app/dist/index.cjs:67:74704)
+npm warn config production Use `--omit=dev` instead.
+    at readMigrationFiles (/app/node_modules/drizzle-orm/migrator.cjs:41:11)
+> rest-express@1.0.0 start
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+node:internal/process/promises:288
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at readMigrationFiles (/app/node_modules/drizzle-orm/migrator.cjs:41:11)
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+    at migrate (/app/node_modules/drizzle-orm/node-postgres/migrator.cjs:26:61)
+Running database migrations...
+    at _m (/app/dist/index.cjs:67:73553)
+Error: Can't find meta/_journal.json file
+Failed to run database migrations: Error: Can't find meta/_journal.json file
+    at /app/dist/index.cjs:67:74360
+> NODE_ENV=production node dist/index.cjs
+    at Object.<anonymous> (/app/dist/index.cjs:67:74704)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+Node.js v18.20.5
+    at migrate (/app/node_modules/drizzle-orm/node-postgres/migrator.cjs:26:61)
+    at _m (/app/dist/index.cjs:67:73553)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at /app/dist/index.cjs:67:74360
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Object.<anonymous> (/app/dist/index.cjs:67:74704)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+npm warn config production Use `--omit=dev` instead.
+> rest-express@1.0.0 start
+> NODE_ENV=production node dist/index.cjs
+Running database migrations...
+    at _m (/app/dist/index.cjs:67:73553)
+    at /app/dist/index.cjs:67:74360
+Failed to run database migrations: Error: Can't find meta/_journal.json file
+    at Object.<anonymous> (/app/dist/index.cjs:67:74704)
+    at readMigrationFiles (/app/node_modules/drizzle-orm/migrator.cjs:41:11)
+    at migrate (/app/node_modules/drizzle-orm/node-postgres/migrator.cjs:26:61)
+    at _m (/app/dist/index.cjs:67:73553)
+    at /app/dist/index.cjs:67:74360
+    at Object.<anonymous> (/app/dist/index.cjs:67:74704)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+node:internal/process/promises:288
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+Error: Can't find meta/_journal.json file
+    at readMigrationFiles (/app/node_modules/drizzle-orm/migrator.cjs:41:11)
+    at migrate (/app/node_modules/drizzle-orm/node-postgres/migrator.cjs:26:61)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+Node.js v18.20.5
