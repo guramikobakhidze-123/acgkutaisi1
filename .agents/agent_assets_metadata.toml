@@ -12,3 +12,9 @@ id = "08Pipv21qKPotoUoXS3Zb"
 uri = "file://acg-static-website.tar.gz"
 type = "unspecified"
 title = "ACG Website — HTML/CSS/JS (Static)"
+
+[[outputs]]
+id = "2GfS33JBdP_O5XIDwMMX_"
+uri = "file://acg-site.tar.gz"
+type = "unspecified"
+title = "ACG საიტის კოდი (tar.gz)"
