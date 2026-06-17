@@ -18,3 +18,9 @@ id = "2GfS33JBdP_O5XIDwMMX_"
 uri = "file://acg-site.tar.gz"
 type = "unspecified"
 title = "ACG საიტის კოდი (tar.gz)"
+
+[[outputs]]
+id = "WaOCwYmKxMRlWOUpP-WZr"
+uri = "file://acg-site-source.tar.gz"
+type = "unspecified"
+title = "ACG საიტი — კოდი (4.6MB)"
