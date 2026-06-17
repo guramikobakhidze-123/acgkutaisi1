@@ -1,0 +1,81 @@
+
+Node.js v18.20.5
+TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of URL. Received undefined
+    at new NodeError (node:internal/errors:405:5)
+npm warn config production Use `--omit=dev` instead.
+DATABASE_URL is not set. Database connection will fail at runtime.
+    at fileURLToPath (node:internal/url:1477:11)
+node:internal/url:1477
+    at Object.<anonymous> (/app/dist/index.cjs:41799:76)
+> rest-express@1.0.0 start
+    throw new ERR_INVALID_ARG_TYPE('path', ['string', 'URL'], path);
+> NODE_ENV=production node dist/index.cjs
+    ^
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at node:internal/main/run_main_module:28:49 {
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+  code: 'ERR_INVALID_ARG_TYPE'
+}
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+npm warn config production Use `--omit=dev` instead.
+> rest-express@1.0.0 start
+> NODE_ENV=production node dist/index.cjs
+Node.js v18.20.5
+DATABASE_URL is not set. Database connection will fail at runtime.
+node:internal/url:1477
+    throw new ERR_INVALID_ARG_TYPE('path', ['string', 'URL'], path);
+    ^
+TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of URL. Received undefined
+    at new NodeError (node:internal/errors:405:5)
+    at fileURLToPath (node:internal/url:1477:11)
+    at Object.<anonymous> (/app/dist/index.cjs:41799:76)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'ERR_INVALID_ARG_TYPE'
+}
+npm warn config production Use `--omit=dev` instead.
+> rest-express@1.0.0 start
+> NODE_ENV=production node dist/index.cjs
+DATABASE_URL is not set. Database connection will fail at runtime.
+node:internal/url:1477
+    throw new ERR_INVALID_ARG_TYPE('path', ['string', 'URL'], path);
+    ^
+TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of URL. Received undefined
+    at new NodeError (node:internal/errors:405:5)
+    at fileURLToPath (node:internal/url:1477:11)
+    at Object.<anonymous> (/app/dist/index.cjs:41799:76)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'ERR_INVALID_ARG_TYPE'
+}
+Node.js v18.20.5
+npm warn config production Use `--omit=dev` instead.
+> rest-express@1.0.0 start
+> NODE_ENV=production node dist/index.cjs
+DATABASE_URL is not set. Database connection will fail at runtime.
+Node.js v18.20.5
+    at Object.<anonymous> (/app/dist/index.cjs:41799:76)
+    at Module._compile (node:internal/modules/cjs/loader:1364:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1422:10)
+    at Module.load (node:internal/modules/cjs/loader:1203:32)
+    at Module._load (node:internal/modules/cjs/loader:1019:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'ERR_INVALID_ARG_TYPE'
+node:internal/url:1477
+}
+    throw new ERR_INVALID_ARG_TYPE('path', ['string', 'URL'], path);
+    ^
+TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string or an instance of URL. Received undefined
+    at new NodeError (node:internal/errors:405:5)
+    at fileURLToPath (node:internal/url:1477:11)
