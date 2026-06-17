@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>სერვისები | ACG Kutaisi</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><div class="nav-logo-text"><strong>ACG</strong><span>ქუთაისის ფილიალი</span></div></a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="home">მთავარი</a>
+      <a href="services.html" class="active" data-i18n="services">სერვისები</a>
+      <a href="about.html" data-i18n="about">ჩვენს შესახებ</a>
+      <a href="team.html" data-i18n="team">გუნდი</a>
+      <a href="contact.html" data-i18n="contacts">კონტაქტები</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switcher"><button class="lang-btn" data-lang="ka">KA</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="tr">TR</button></div>
+      <a href="contact.html" class="btn btn-primary" data-i18n="getConsultation">მიიღეთ კონსულტაცია</a>
+    </div>
+    <button class="hamburger" id="menu-toggle"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu hidden" id="mobile-menu">
+    <a href="index.html" data-i18n="home">მთავარი</a><a href="services.html" data-i18n="services">სერვისები</a><a href="about.html" data-i18n="about">ჩვენს შესახებ</a><a href="team.html" data-i18n="team">გუნდი</a><a href="contact.html" data-i18n="contacts">კონტაქტები</a>
+    <div class="lang-switcher" style="margin-top:12px;display:flex;"><button class="lang-btn" data-lang="ka">KA</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="tr">TR</button></div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <span class="eyebrow" style="color:#a1c9f5;">Our Services</span>
+    <h1 data-i18n="ourServices">ჩვენი სერვისები</h1>
+    <p data-i18n="servicesDesc">ჩვენ გთავაზობთ სრულ სპექტრს ფინანსური და საკონსულტაციო სერვისების.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="services-grid">
+      <div class="service-card" id="audit">
+        <div class="service-icon">🔍</div>
+        <h3 data-i18n="auditAssurance">აუდიტი და დადასტურება</h3>
+        <p>ფინანსური ანგარიშგების დამოუკიდებელი აუდიტი საერთაშორისო სტანდარტების (ISA) შესაბამისად. ჩვენ ვიღებთ პასუხისმგებლობას თქვენი ფინანსური ინფორმაციის სიზუსტეზე.</p>
+        <ul style="margin-top:12px;padding-left:20px;color:var(--muted);font-size:14px;line-height:2;">
+          <li>ფინანსური ანგარიშგების აუდიტი</li>
+          <li>IFRS/IAS კონვერტაცია</li>
+          <li>შიდა კონტროლის შეფასება</li>
+          <li>სპეციალური დანიშნულების ანგარიშები</li>
+        </ul>
+      </div>
+      <div class="service-card" id="financial">
+        <div class="service-icon">💰</div>
+        <h3 data-i18n="financialServices">ფინანსური სერვისები</h3>
+        <p>ფინანსური ანალიზი, ბიზნეს-დაგეგმვა და ფინანსური სტრატეგიის შემუშავება. ჩვენი გამოცდილი სპეციალისტები დაგეხმარებათ ოპტიმალური ფინანსური გადაწყვეტილებების მიღებაში.</p>
+        <ul style="margin-top:12px;padding-left:20px;color:var(--muted);font-size:14px;line-height:2;">
+          <li>ფინანსური ანალიზი</li>
+          <li>ბიზნეს-გეგმების შემუშავება</li>
+          <li>ინვესტიციების ანალიზი</li>
+          <li>ფინანსური მოდელირება</li>
+        </ul>
+      </div>
+      <div class="service-card" id="loan">
+        <div class="service-icon">🏦</div>
+        <h3 data-i18n="loanVerification">სესხის მიზნობრიობის გადამოწმება</h3>
+        <p>ბანკებისა და სხვა საფინანსო ინსტიტუტებისთვის სესხის მიზნობრიობის გადამოწმება და ანგარიშგება.</p>
+        <ul style="margin-top:12px;padding-left:20px;color:var(--muted);font-size:14px;line-height:2;">
+          <li>სესხის გამოყენების მონიტორინგი</li>
+          <li>პროექტის განხორციელების ანგარიში</li>
+          <li>ფინანსური ნაკადების ანალიზი</li>
+        </ul>
+      </div>
+      <div class="service-card" id="consulting">
+        <div class="service-icon">📋</div>
+        <h3 data-i18n="consulting">საკონსულტაციო სერვისები</h3>
+        <p>ბიზნეს კონსულტაციები, სტრატეგიული დაგეგმვა და ორგანიზაციული განვითარება. ჩვენ ვეხმარებით ბიზნეს-სუბიექტებს ეფექტური სტრატეგიების შემუშავებასა და განხორციელებაში.</p>
+        <ul style="margin-top:12px;padding-left:20px;color:var(--muted);font-size:14px;line-height:2;">
+          <li>სტრატეგიული კონსულტაცია</li>
+          <li>ბიზნეს-პროცესების ოპტიმიზაცია</li>
+          <li>Due Diligence</li>
+          <li>M&A კონსულტაცია</li>
+        </ul>
+      </div>
+      <div class="service-card" id="legal">
+        <div class="service-icon">⚖️</div>
+        <h3 data-i18n="legalServices">სამართლებრივი სერვისები</h3>
+        <p>სამართლებრივი კონსულტაცია კომპანიების დაფუძნების, ხელშეკრულებების, კორპორატიული საკითხების და ბიზნეს-სამართლის სფეროში.</p>
+        <ul style="margin-top:12px;padding-left:20px;color:var(--muted);font-size:14px;line-height:2;">
+          <li>კომპანიის რეგისტრაცია</li>
+          <li>ხელშეკრულებების შედგენა</li>
+          <li>კორპორატიული სამართალი</li>
+          <li>სახელშეკრულებო დავები</li>
+        </ul>
+      </div>
+      <div class="service-card" id="property">
+        <div class="service-icon">🏠</div>
+        <h3 data-i18n="propertyValuation">ქონების შეფასება</h3>
+        <p>უძრავი და მოძრავი ქონების, ბიზნესის და აქტივების პროფესიული შეფასება ბაზრობრივი, შემოსავლობრივი და ხარჯობრივი მეთოდებით.</p>
+        <ul style="margin-top:12px;padding-left:20px;color:var(--muted);font-size:14px;line-height:2;">
+          <li>უძრავი ქონების შეფასება</li>
+          <li>ბიზნეს-შეფასება</li>
+          <li>მასალური აქტივების შეფასება</li>
+          <li>სადაზღვეო შეფასება</li>
+        </ul>
+      </div>
+      <div class="service-card" id="tax">
+        <div class="service-icon">📊</div>
+        <h3 data-i18n="taxDisputes">საგადასახადო დავები და კონსულტაცია</h3>
+        <p>საგადასახადო კანონმდებლობის ინტერპრეტაცია, საგადასახადო დეკლარაციების მომზადება, საგადასახადო ოპტიმიზაცია და სახელმწიფო ორგანოებთან ურთიერთობა.</p>
+        <ul style="margin-top:12px;padding-left:20px;color:var(--muted);font-size:14px;line-height:2;">
+          <li>საგადასახადო კონსულტაცია</li>
+          <li>საგადასახადო დეკლარაციები</li>
+          <li>დავების წარმოება</li>
+          <li>საგადასახადო ოპტიმიზაცია</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔗</div>
+        <h3 data-i18n="blockchainWeb3">ბლოქჩეინი და Web3</h3>
+        <p>კრიპტო-აქტივების, ბლოქჩეინ ტრანზაქციების და Web3 პროექტების საგადასახადო და სამართლებრივი კონსულტაცია.</p>
+        <ul style="margin-top:12px;padding-left:20px;color:var(--muted);font-size:14px;line-height:2;">
+          <li>კრიპტო-აქტივების დაბეგვრა</li>
+          <li>ბლოქჩეინ ბუღალტრია</li>
+          <li>Smart Contract კონსულტაცია</li>
+          <li>NFT სამართლებრივი სარჩელი</li>
+        </ul>
+      </div>
+      <div class="service-card" id="accounting">
+        <div class="service-icon">📒</div>
+        <h3 data-i18n="accounting">ბუღალტრია და კანონმდებლობა</h3>
+        <p>ბუღალტრული აღრიცხვის წარმოება, ფინანსური ანგარიშგების მომზადება ქართული და საერთაშორისო სტანდარტების შესაბამისად.</p>
+        <ul style="margin-top:12px;padding-left:20px;color:var(--muted);font-size:14px;line-height:2;">
+          <li>ბუღალტრული მომსახურება</li>
+          <li>სახელფასო დამუშავება</li>
+          <li>ფინანსური ანგარიშგება</li>
+          <li>IFRS კონვერტაცია</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2 data-i18n="readyTitle">მზად ხართ დაიწყოთ?</h2>
+    <p data-i18n="contactDesc">გაქვთ კითხვა? ჩვენ მზად ვართ დაგეხმაროთ.</p>
+    <a href="contact.html" class="btn btn-outline" style="font-size:1.1rem;padding:14px 40px;" data-i18n="readyCta">დაგვიკავშირდით დღეს</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo"><div class="footer-logo-text"><strong>ACG — Audit & Consulting Group</strong><span>ქუთაისის ფილიალი · Integra International</span></div></div><p style="font-size:14px;line-height:1.7;" data-i18n="footerDesc">Integra International-ის წევრი ფირმა.</p></div>
+      <div><h4 data-i18n="company">კომპანია</h4><ul><li><a href="index.html" data-i18n="home">მთავარი</a></li><li><a href="about.html" data-i18n="about">ჩვენს შესახებ</a></li><li><a href="services.html" data-i18n="services">სერვისები</a></li><li><a href="team.html" data-i18n="team">გუნდი</a></li><li><a href="contact.html" data-i18n="contact">კონტაქტი</a></li></ul></div>
+      <div><h4 data-i18n="services">სერვისები</h4><ul><li><a href="#audit" data-i18n="auditAssurance">აუდიტი</a></li><li><a href="#financial" data-i18n="financialServices">ფინანსური</a></li><li><a href="#consulting" data-i18n="consulting">კონსულტაცია</a></li><li><a href="#legal" data-i18n="legalServices">სამართლებრივი</a></li><li><a href="#tax" data-i18n="taxDisputes">საგადასახადო</a></li></ul></div>
+      <div><h4 data-i18n="contacts">კონტაქტები</h4>
+        <div class="footer-contact-item"><span class="icon">📍</span><div><strong data-i18n="headquarters">მთავარი ოფისი</strong><span data-i18n="officeAddress">წერეთლის 12, ქუთაისი, საქართველო</span></div></div>
+        <div class="footer-contact-item"><span class="icon">📞</span><div>+995 597 69 69 54<br />+995 555 11 99 65<br />+995 577 12 34 01</div></div>
+        <div class="footer-contact-item"><span class="icon">✉️</span><div>murmankobaxidze@gmail.com</div></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© <script>document.write(new Date().getFullYear())</script> ACG — Audit & Consulting Group. <span data-i18n="allRightsReserved">ყველა უფლება დაცულია</span>.</span><div class="footer-bottom-links"><a href="#" data-i18n="privacyPolicy">კონფიდენციალობის პოლიტიკა</a><a href="#" data-i18n="termsOfService">მომსახურების პირობები</a></div></div>
+  </div>
+</footer>
+<script src="js/translations.js"></script><script src="js/main.js"></script>
+</body></html>

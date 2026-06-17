@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>მურმან კობახიძე | ACG Kutaisi</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo"><div class="nav-logo-text"><strong>ACG</strong><span>ქუთაისის ფილიალი</span></div></a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="home">მთავარი</a>
+      <div class="dropdown"><span class="dropdown-trigger" data-i18n="services">სერვისები</span><div class="dropdown-menu"><a href="services.html" data-i18n="viewAllServices">ყველა სერვისი</a></div></div>
+      <a href="about.html" data-i18n="about">ჩვენს შესახებ</a>
+      <a href="team.html" class="active" data-i18n="team">გუნდი</a>
+      <a href="contact.html" data-i18n="contacts">კონტაქტები</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switcher"><button class="lang-btn" data-lang="ka">KA</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="tr">TR</button></div>
+      <a href="contact.html" class="btn btn-primary" data-i18n="getConsultation">მიიღეთ კონსულტაცია</a>
+    </div>
+    <button class="hamburger" id="menu-toggle"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu hidden" id="mobile-menu">
+    <a href="index.html" data-i18n="home">მთავარი</a><a href="services.html" data-i18n="services">სერვისები</a><a href="about.html" data-i18n="about">ჩვენს შესახებ</a><a href="team.html" data-i18n="team">გუნდი</a><a href="contact.html" data-i18n="contacts">კონტაქტები</a>
+    <div class="lang-switcher" style="margin-top:12px;display:flex;"><button class="lang-btn" data-lang="ka">KA</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="ru">RU</button><button class="lang-btn" data-lang="tr">TR</button></div>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container">
+    <a href="team.html" class="back-link" data-i18n="backToTeam">← გუნდში დაბრუნება</a>
+    <div class="member-detail">
+      <div>
+        <div class="member-photo">
+          <img src="images/murman-kobakhidze.jpg" alt="მურმან კობახიძე" />
+        </div>
+      </div>
+      <div class="member-info">
+        <h1 id="member-name">მურმან კობახიძე</h1>
+        <p class="member-role" id="member-role">დირექტორი, აუდიტორი</p>
+        <div class="member-bio" id="member-bio"></div>
+        <a href="mailto:murmankobaxidze@gmail.com" class="member-email">✉ murmankobaxidze@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo"><div class="footer-logo-text"><strong>ACG — Audit & Consulting Group</strong><span>ქუთაისის ფილიალი · Integra International</span></div></div></div>
+      <div><h4 data-i18n="company">კომპანია</h4><ul><li><a href="index.html" data-i18n="home">მთავარი</a></li><li><a href="team.html" data-i18n="team">გუნდი</a></li><li><a href="contact.html" data-i18n="contact">კონტაქტი</a></li></ul></div>
+      <div><h4 data-i18n="contacts">კონტაქტები</h4><div class="footer-contact-item"><span class="icon">📍</span><div><strong data-i18n="headquarters">მთავარი ოფისი</strong><span data-i18n="officeAddress">წერეთლის 12, ქუთაისი</span></div></div><div class="footer-contact-item"><span class="icon">📞</span><div>+995 555 11 99 65</div></div></div>
+    </div>
+    <div class="footer-bottom"><span>© <script>document.write(new Date().getFullYear())</script> ACG — Audit & Consulting Group. <span data-i18n="allRightsReserved">ყველა უფლება დაცულია</span>.</span></div>
+  </div>
+</footer>
+
+<script src="js/translations.js"></script>
+<script src="js/main.js"></script>
+<script>
+const bios = {
+  ka: `დაბადების თარიღი: 11.10.1965
+მოქალაქეობა: საქართველო
+ტელ: 555 119965
+
+განათლება:
+- გორის ეკონომიური ინსტიტუტი, საბუღალტრო აღრიცხვა და სამეურნეო საქმიანობის ანალიზი.
+- 2014-2019 საჯარო სექტორის აუდიტორი
+
+სამუშაო გამოცდილება:
+- 1994-2007 ქ. ქუთაისის მერიის საფინანსო საქალაქო სამმართველო, საბიუჯეტო სახაზინო განყოფილების უფროსი.
+- 2014-2024 სსიპ კოლეჯი იბერია, ფინანსური მენეჯერი.
+- 2014-დღემდე სსიპ კოლეჯი იბერია, პედაგოგი.
+- 2013-დღემდე შპს ორისაუდიტი, დირექტორი.
+- 2020-დღემდე შპს აუდიტ ენდ ქონსალთინგ გრუპი, აუდიტორი.
+
+ენები: ქართული (მშობლიური), რუსული (კარგად), ინგლისური (საშუალოდ)
+
+კომპიუტერული უნარები: ორის ბუღალტერია, Microsoft Office.`,
+  en: `Date of Birth: 11.10.1965
+Citizenship: Georgia
+Tel: 555 119965
+
+Education:
+- Gori Economic Institute, Accounting and Business Activity Analysis.
+- 2014-2019 Public Sector Auditor.
+
+Work Experience:
+- 1994-2007 Kutaisi City Hall Finance Department, Head of Budget Treasury Division.
+- 2014-2024 LEPL College Iberia, Financial Manager.
+- 2014-present LEPL College Iberia, Lecturer.
+- 2013-present LLC Orisauditi, Director.
+- 2020-present LLC Audit and Consulting Group, Auditor.
+
+Languages: Georgian (native), Russian (good), English (intermediate)
+Computer Skills: Oris Accounting Software, Microsoft Office.`,
+  ru: `Дата рождения: 11.10.1965
+Гражданство: Грузия
+Тел: 555 119965
+
+Образование:
+- Горийский экономический институт, бухгалтерский учёт.
+- 2014-2019 Аудитор государственного сектора.
+
+Опыт работы:
+- 1994-2007 Финансовое управление мэрии Кутаиси, начальник казначейского отдела.
+- 2014-2024 ГПИП Колледж Иберия, финансовый менеджер.
+- 2014-н.в. ГПИП Колледж Иберия, преподаватель.
+- 2013-н.в. ООО Orisauditi, директор.
+- 2020-н.в. ООО Audit and Consulting Group, аудитор.
+
+Языки: Грузинский (родной), Русский (хорошо), Английский (средний)
+Компьютерные навыки: Бухгалтерия Oris, Microsoft Office.`,
+  tr: `Doğum Tarihi: 11.10.1965
+Vatandaşlık: Gürcistan
+Tel: 555 119965
+
+Eğitim:
+- Gori Ekonomi Enstitüsü, Muhasebe ve İş Analizi.
+- 2014-2019 Kamu Sektörü Denetçisi.
+
+İş Deneyimi:
+- 1994-2007 Kutaisi Belediyesi, Bütçe Hazine Bölümü Başkanı.
+- 2014-2024 LEPL Kolej İberya, Mali Müdür.
+- 2014-günümüze LEPL Kolej İberya, Öğretim Görevlisi.
+- 2013-günümüze Orisauditi LLC, Direktör.
+- 2020-günümüze Audit and Consulting Group LLC, Denetçi.
+
+Diller: Gürcüce (anadil), Rusça (iyi), İngilizce (orta)
+Bilgisayar Becerileri: Oris Muhasebe, Microsoft Office.`
+};
+const names = { ka: "მურმან კობახიძე", en: "Murman Kobakhidze", ru: "Мурман Кобахидзе", tr: "Murman Kobakhidze" };
+const roles = { ka: "დირექტორი, აუდიტორი", en: "Director, Auditor", ru: "Директор, Аудитор", tr: "Direktör, Denetçi" };
+
+function renderBio(lang) {
+  const bio = bios[lang] || bios.ka;
+  const el = document.getElementById('member-bio');
+  el.innerHTML = '';
+  bio.split('\n').forEach(line => {
+    const p = document.createElement('p');
+    if (line.trim() === '') { p.style.height = '8px'; }
+    else if (line.startsWith('-')) { p.className = 'bio-item'; p.textContent = line; }
+    else if (line.includes(':') && !line.startsWith('-')) {
+      p.className = 'bio-heading'; p.textContent = line;
+    } else { p.textContent = line; }
+    el.appendChild(p);
+  });
+  document.getElementById('member-name').textContent = names[lang] || names.ka;
+  document.getElementById('member-role').textContent = roles[lang] || roles.ka;
+}
+
+const origSwitch = window.switchLang ? window.switchLang : null;
+document.addEventListener('DOMContentLoaded', () => {
+  renderBio(currentLang);
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => { renderBio(btn.dataset.lang); });
+  });
+});
+</script>
+</body></html>
