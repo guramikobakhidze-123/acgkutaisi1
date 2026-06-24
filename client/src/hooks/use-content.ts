@@ -1,90 +1,47 @@
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { api, buildUrl } from "@shared/routes";
+import { useMutation } from "@tanstack/react-query";
 import { InsertContactRequest } from "@shared/schema";
+import { SERVICES, TEAM_MEMBERS, POSTS } from "@/data/static-data";
 
-// Services
+// Services — static data, no API call needed
 export function useServices() {
-  return useQuery({
-    queryKey: [api.services.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.services.list.path);
-      if (!res.ok) throw new Error("Failed to fetch services");
-      return api.services.list.responses[200].parse(await res.json());
-    },
-  });
+  return { data: SERVICES, isLoading: false, error: null };
 }
 
 export function useService(slug: string) {
-  return useQuery({
-    queryKey: [api.services.get.path, slug],
-    queryFn: async () => {
-      const url = buildUrl(api.services.get.path, { slug });
-      const res = await fetch(url);
-      if (res.status === 404) return null;
-      if (!res.ok) throw new Error("Failed to fetch service");
-      return api.services.get.responses[200].parse(await res.json());
-    },
-    enabled: !!slug,
-  });
+  const service = SERVICES.find((s) => s.slug === slug) ?? null;
+  return { data: service, isLoading: false, error: null };
 }
 
-// Team
+// Team — static data
 export function useTeam() {
-  return useQuery({
-    queryKey: [api.team.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.team.list.path);
-      if (!res.ok) throw new Error("Failed to fetch team");
-      return api.team.list.responses[200].parse(await res.json());
-    },
-  });
+  return { data: TEAM_MEMBERS, isLoading: false, error: null };
 }
 
-// Posts / Insights
+export function useTeamMember(id: number) {
+  const member = TEAM_MEMBERS.find((m) => m.id === id) ?? null;
+  return { data: member, isLoading: false, error: null };
+}
+
+// Posts — static data
 export function usePosts() {
-  return useQuery({
-    queryKey: [api.posts.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.posts.list.path);
-      if (!res.ok) throw new Error("Failed to fetch posts");
-      return api.posts.list.responses[200].parse(await res.json());
-    },
-  });
+  return { data: POSTS, isLoading: false, error: null };
 }
 
 export function usePost(slug: string) {
-  return useQuery({
-    queryKey: [api.posts.get.path, slug],
-    queryFn: async () => {
-      const url = buildUrl(api.posts.get.path, { slug });
-      const res = await fetch(url);
-      if (res.status === 404) return null;
-      if (!res.ok) throw new Error("Failed to fetch post");
-      return api.posts.get.responses[200].parse(await res.json());
-    },
-    enabled: !!slug,
-  });
+  const post = POSTS.find((p) => p.slug === slug) ?? null;
+  return { data: post, isLoading: false, error: null };
 }
 
-// Contact Form
+// Contact Form — sends via mailto (no backend needed)
 export function useSubmitContact() {
   return useMutation({
     mutationFn: async (data: InsertContactRequest) => {
-      const validated = api.contact.submit.input.parse(data);
-      const res = await fetch(api.contact.submit.path, {
-        method: api.contact.submit.method,
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(validated),
-      });
-
-      if (!res.ok) {
-        if (res.status === 400) {
-          const error = api.contact.submit.responses[400].parse(await res.json());
-          throw new Error(error.message);
-        }
-        throw new Error("Failed to submit contact request");
-      }
-      return api.contact.submit.responses[201].parse(await res.json());
+      const subject = encodeURIComponent(`Contact from ${data.name} - ${data.company || "ACG Website"}`);
+      const body = encodeURIComponent(
+        `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone || "-"}\nCompany: ${data.company || "-"}\n\nMessage:\n${data.message}`
+      );
+      window.location.href = `mailto:murmankobaxidze@gmail.com,temuri.gvetadze@gmail.com,guramikobakhidze@gmail.com?subject=${subject}&body=${body}`;
+      return { id: 0, ...data, createdAt: new Date() };
     },
   });
 }
