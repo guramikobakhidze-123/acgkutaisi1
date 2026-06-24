@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook, Banknote } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import integraLogo from "@images/Integra_International_Primary_White_1769239697208.jpg";
 
 export function Footer() {
   const { t } = useLanguage();
@@ -12,7 +13,7 @@ export function Footer() {
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-3">
             <img 
-              src="/assets/Integra_International_Primary_White_1769239697208.jpg" 
+              src={integraLogo}
               alt="Integra International" 
               className="h-10 w-auto bg-white rounded px-2 py-1"
             />

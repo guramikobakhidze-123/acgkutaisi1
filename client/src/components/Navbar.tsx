@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useLanguage } from "@/contexts/LanguageContext";
+import integraLogo from "@images/Integra_International_Primary_White_1769239697208.jpg";
 
 export function Navbar() {
   const [location] = useLocation();
@@ -48,7 +49,7 @@ export function Navbar() {
           <div className="flex items-center gap-3">
             <a href="https://integra-international.net/" target="_blank" rel="noopener noreferrer" data-testid="link-logo-integra">
               <img 
-                src="/assets/Integra_International_Primary_White_1769239697208.jpg" 
+                src={integraLogo}
                 alt="Integra International" 
                 className="h-10 w-auto"
               />

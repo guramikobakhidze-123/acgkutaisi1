@@ -5,6 +5,7 @@ import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight, Shield, Briefcase, ShieldCheck, TrendingUp } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import kutaisiHero from "@images/kutaisi-hero.jpg";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -35,7 +36,7 @@ export default function Home() {
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/assets/kutaisi-hero.jpg" 
+            src={kutaisiHero} 
             alt={t("modernBuilding")} 
             className="w-full h-full object-cover"
           />

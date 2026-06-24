@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Award, Users } from "lucide-react";
+import integraLogo from "@images/Integra_International_Primary_White_1769239697208.jpg";
 
 export default function About() {
   const { t } = useLanguage();
@@ -42,7 +43,7 @@ export default function About() {
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="bg-slate-50 rounded-lg px-6 py-3 border border-slate-200">
                   <img 
-                    src="/assets/Integra_International_Primary_White_1769239697208.jpg" 
+                    src={integraLogo}
                     alt="Integra International" 
                     className="h-10 w-auto"
                   />
@@ -78,7 +79,7 @@ export default function About() {
               </div>
               <div className="rounded-2xl overflow-hidden bg-slate-50 border border-slate-200 p-6 flex items-center gap-4">
                 <img 
-                  src="/assets/Integra_International_Primary_White_1769239697208.jpg" 
+                  src={integraLogo} 
                   alt="ACG Consulting" 
                   className="h-12 w-auto"
                 />
