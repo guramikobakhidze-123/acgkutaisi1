@@ -24,3 +24,9 @@ id = "WaOCwYmKxMRlWOUpP-WZr"
 uri = "file://acg-site-source.tar.gz"
 type = "unspecified"
 title = "ACG საიტი — სრული კოდი"
+
+[[outputs]]
+id = "-TCNGowqgJMfURMeT5KIH"
+uri = "file://acgkutaisi-export.tar.gz"
+type = "unspecified"
+title = "ACG Kutaisi — Project Source Code"
